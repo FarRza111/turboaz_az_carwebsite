@@ -1,0 +1,848 @@
+2024-11-19 15:12:42,650 - __main__ - INFO - Starting the car scraper
+2024-11-19 15:12:42,652 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:42,652 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cars")
+2024-11-19 15:12:42,652 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2024-11-19 15:12:42,653 - sqlalchemy.engine.Engine - INFO - 
+DROP TABLE cars
+2024-11-19 15:12:42,653 - sqlalchemy.engine.Engine - INFO - [no key 0.00004s] ()
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("cars")
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("cars")
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE cars (
+	id INTEGER NOT NULL, 
+	listing_id VARCHAR, 
+	title VARCHAR, 
+	price FLOAT, 
+	year INTEGER, 
+	mileage FLOAT, 
+	body_type VARCHAR, 
+	color VARCHAR, 
+	engine_size FLOAT, 
+	fuel_type VARCHAR, 
+	transmission VARCHAR, 
+	description TEXT, 
+	location VARCHAR, 
+	brand VARCHAR, 
+	model VARCHAR, 
+	seller_type VARCHAR, 
+	images TEXT, 
+	url VARCHAR, 
+	created_at DATETIME, 
+	updated_at DATETIME, 
+	PRIMARY KEY (id)
+)
+
+
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - [no key 0.00003s] ()
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_cars_listing_id ON cars (listing_id)
+2024-11-19 15:12:42,654 - sqlalchemy.engine.Engine - INFO - [no key 0.00003s] ()
+2024-11-19 15:12:42,655 - sqlalchemy.engine.Engine - INFO - CREATE INDEX ix_cars_id ON cars (id)
+2024-11-19 15:12:42,655 - sqlalchemy.engine.Engine - INFO - [no key 0.00002s] ()
+2024-11-19 15:12:42,655 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:42,655 - models - INFO - Database initialized successfully
+2024-11-19 15:12:42,655 - __main__ - INFO - Database initialized
+2024-11-19 15:12:42,655 - __main__ - INFO - Fetching URL: https://turbo.az/autos
+2024-11-19 15:12:43,450 - __main__ - INFO - Successfully fetched https://turbo.az/autos
+2024-11-19 15:12:43,516 - __main__ - INFO - Total pages to scrape: 1
+2024-11-19 15:12:43,516 - __main__ - INFO - Processing page 1/1
+2024-11-19 15:12:43,516 - __main__ - INFO - Fetching URL: https://turbo.az/autos?page=1
+2024-11-19 15:12:44,296 - __main__ - INFO - Successfully fetched https://turbo.az/autos?page=1
+2024-11-19 15:12:44,374 - __main__ - INFO - Found 36 product links
+2024-11-19 15:12:44,374 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8858116
+2024-11-19 15:12:44,374 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8858116
+2024-11-19 15:12:44,743 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8858116
+2024-11-19 15:12:44,790 - __main__ - INFO - Extracted car data: {'title': 'Hyundai Santa Fe, 2.0 L, 2013 il, 137 137 km', 'price': 32000.0, 'description': None, 'location': 'Bakı', 'brand': 'Hyundai', 'model': 'Santa Fe', 'year': 2013, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Boz', 'engine_size': 2.0, 'mileage': 137137.0, 'transmission': 'Avtomat', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8858116'}
+2024-11-19 15:12:44,792 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:44,793 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:44,793 - sqlalchemy.engine.Engine - INFO - [generated in 0.00012s] ('8858116', 1, 0)
+2024-11-19 15:12:44,793 - models - INFO - Added new car 8858116
+2024-11-19 15:12:44,794 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:44,795 - sqlalchemy.engine.Engine - INFO - [generated in 0.00010s] ('8858116', 'Hyundai Santa Fe, 2.0 L, 2013 il, 137 137 km', 32000.0, 2013, 137137.0, 'Offroader / SUV, 5 qapı', 'Boz', 2.0, 'Diesel', 'Avtomat', None, 'Bakı', 'Hyundai', 'Santa Fe', 'Private', None, 'https://turbo.az/autos/8858116', '2024-11-19 13:12:44.793936', '2024-11-19 13:12:44.793941')
+2024-11-19 15:12:44,795 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:44,796 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:44,796 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:44,796 - sqlalchemy.engine.Engine - INFO - [generated in 0.00008s] (1,)
+2024-11-19 15:12:44,796 - models - INFO - Successfully saved car 8858116 to database
+2024-11-19 15:12:44,796 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:44,796 - __main__ - INFO - Successfully saved car 8858116 to database
+2024-11-19 15:12:45,802 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8921855
+2024-11-19 15:12:45,802 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8921855
+2024-11-19 15:12:46,197 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8921855
+2024-11-19 15:12:46,244 - __main__ - INFO - Extracted car data: {'title': 'Land Rover RR Sport, 5.0 L, 2013 il, 99 800 km', 'price': 33777.0, 'description': None, 'location': 'Bakı', 'brand': 'Land Rover', 'model': 'RR Sport', 'year': 2013, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Ağ', 'engine_size': 5.0, 'mileage': 99800.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8921855'}
+2024-11-19 15:12:46,244 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:46,244 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:46,244 - sqlalchemy.engine.Engine - INFO - [cached since 1.451s ago] ('8921855', 1, 0)
+2024-11-19 15:12:46,245 - models - INFO - Added new car 8921855
+2024-11-19 15:12:46,245 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:46,245 - sqlalchemy.engine.Engine - INFO - [cached since 1.45s ago] ('8921855', 'Land Rover RR Sport, 5.0 L, 2013 il, 99 800 km', 33777.0, 2013, 99800.0, 'Offroader / SUV, 5 qapı', 'Ağ', 5.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Land Rover', 'RR Sport', 'Private', None, 'https://turbo.az/autos/8921855', '2024-11-19 13:12:46.244975', '2024-11-19 13:12:46.244980')
+2024-11-19 15:12:46,245 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:46,246 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:46,246 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:46,246 - sqlalchemy.engine.Engine - INFO - [cached since 1.45s ago] (2,)
+2024-11-19 15:12:46,246 - models - INFO - Successfully saved car 8921855 to database
+2024-11-19 15:12:46,246 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:46,246 - __main__ - INFO - Successfully saved car 8921855 to database
+2024-11-19 15:12:47,251 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8330427
+2024-11-19 15:12:47,252 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8330427
+2024-11-19 15:12:47,745 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8330427
+2024-11-19 15:12:47,766 - __main__ - INFO - Extracted car data: {'title': 'Toyota RAV4, 2.5 L, 2019 il, 56 000 km', 'price': 46700.0, 'description': None, 'location': 'Bakı', 'brand': 'Toyota', 'model': 'RAV4', 'year': 2019, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Göy', 'engine_size': 2.5, 'mileage': 56000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8330427'}
+2024-11-19 15:12:47,766 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:47,767 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:47,767 - sqlalchemy.engine.Engine - INFO - [cached since 2.974s ago] ('8330427', 1, 0)
+2024-11-19 15:12:47,767 - models - INFO - Added new car 8330427
+2024-11-19 15:12:47,767 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:47,767 - sqlalchemy.engine.Engine - INFO - [cached since 2.973s ago] ('8330427', 'Toyota RAV4, 2.5 L, 2019 il, 56 000 km', 46700.0, 2019, 56000.0, 'Offroader / SUV, 5 qapı', 'Göy', 2.5, 'Gasoline', 'Avtomat', None, 'Bakı', 'Toyota', 'RAV4', 'Private', None, 'https://turbo.az/autos/8330427', '2024-11-19 13:12:47.767353', '2024-11-19 13:12:47.767358')
+2024-11-19 15:12:47,767 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:47,768 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:47,768 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:47,768 - sqlalchemy.engine.Engine - INFO - [cached since 2.972s ago] (3,)
+2024-11-19 15:12:47,768 - models - INFO - Successfully saved car 8330427 to database
+2024-11-19 15:12:47,769 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:47,769 - __main__ - INFO - Successfully saved car 8330427 to database
+2024-11-19 15:12:48,774 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8122467
+2024-11-19 15:12:48,774 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8122467
+2024-11-19 15:12:49,274 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8122467
+2024-11-19 15:12:49,321 - __main__ - INFO - Extracted car data: {'title': 'Hyundai Tucson, 2.0 L, 2014 il, 148 000 km', 'price': 27700.0, 'description': None, 'location': 'Bakı', 'brand': 'Hyundai', 'model': 'Tucson', 'year': 2014, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Qara', 'engine_size': 2.0, 'mileage': 148000.0, 'transmission': 'Avtomat', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8122467'}
+2024-11-19 15:12:49,321 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:49,322 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:49,322 - sqlalchemy.engine.Engine - INFO - [cached since 4.529s ago] ('8122467', 1, 0)
+2024-11-19 15:12:49,322 - models - INFO - Added new car 8122467
+2024-11-19 15:12:49,322 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:49,322 - sqlalchemy.engine.Engine - INFO - [cached since 4.528s ago] ('8122467', 'Hyundai Tucson, 2.0 L, 2014 il, 148 000 km', 27700.0, 2014, 148000.0, 'Offroader / SUV, 5 qapı', 'Qara', 2.0, 'Diesel', 'Avtomat', None, 'Bakı', 'Hyundai', 'Tucson', 'Private', None, 'https://turbo.az/autos/8122467', '2024-11-19 13:12:49.322237', '2024-11-19 13:12:49.322242')
+2024-11-19 15:12:49,323 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:49,324 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:49,324 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:49,324 - sqlalchemy.engine.Engine - INFO - [cached since 4.528s ago] (4,)
+2024-11-19 15:12:49,324 - models - INFO - Successfully saved car 8122467 to database
+2024-11-19 15:12:49,324 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:49,324 - __main__ - INFO - Successfully saved car 8122467 to database
+2024-11-19 15:12:50,329 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8857863
+2024-11-19 15:12:50,330 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8857863
+2024-11-19 15:12:50,751 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8857863
+2024-11-19 15:12:50,809 - __main__ - INFO - Extracted car data: {'title': 'BMW 530, 2.0 L, 2018 il, 108 620 km', 'price': 31500.0, 'description': None, 'location': 'Bakı', 'brand': 'BMW', 'model': '530', 'year': 2018, 'body_type': 'Sedan', 'color': 'Ağ', 'engine_size': 2.0, 'mileage': 108620.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8857863'}
+2024-11-19 15:12:50,810 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:50,810 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:50,810 - sqlalchemy.engine.Engine - INFO - [cached since 6.017s ago] ('8857863', 1, 0)
+2024-11-19 15:12:50,810 - models - INFO - Added new car 8857863
+2024-11-19 15:12:50,810 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:50,810 - sqlalchemy.engine.Engine - INFO - [cached since 6.016s ago] ('8857863', 'BMW 530, 2.0 L, 2018 il, 108 620 km', 31500.0, 2018, 108620.0, 'Sedan', 'Ağ', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'BMW', '530', 'Private', None, 'https://turbo.az/autos/8857863', '2024-11-19 13:12:50.810426', '2024-11-19 13:12:50.810431')
+2024-11-19 15:12:50,810 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:50,811 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:50,811 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:50,811 - sqlalchemy.engine.Engine - INFO - [cached since 6.015s ago] (5,)
+2024-11-19 15:12:50,811 - models - INFO - Successfully saved car 8857863 to database
+2024-11-19 15:12:50,811 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:50,811 - __main__ - INFO - Successfully saved car 8857863 to database
+2024-11-19 15:12:51,816 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8907842
+2024-11-19 15:12:51,817 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8907842
+2024-11-19 15:12:52,339 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8907842
+2024-11-19 15:12:52,385 - __main__ - INFO - Extracted car data: {'title': 'Mercedes E 200, 2.0 L, 2022 il, 71 000 km', 'price': 56500.0, 'description': None, 'location': 'Bakı', 'brand': 'Mercedes', 'model': 'E 200', 'year': 2022, 'body_type': 'Sedan', 'color': 'Qara', 'engine_size': 2.0, 'mileage': 71000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8907842'}
+2024-11-19 15:12:52,385 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:52,385 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:52,385 - sqlalchemy.engine.Engine - INFO - [cached since 7.592s ago] ('8907842', 1, 0)
+2024-11-19 15:12:52,386 - models - INFO - Added new car 8907842
+2024-11-19 15:12:52,386 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:52,386 - sqlalchemy.engine.Engine - INFO - [cached since 7.592s ago] ('8907842', 'Mercedes E 200, 2.0 L, 2022 il, 71 000 km', 56500.0, 2022, 71000.0, 'Sedan', 'Qara', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Mercedes', 'E 200', 'Private', None, 'https://turbo.az/autos/8907842', '2024-11-19 13:12:52.386170', '2024-11-19 13:12:52.386177')
+2024-11-19 15:12:52,386 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:52,387 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:52,387 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:52,387 - sqlalchemy.engine.Engine - INFO - [cached since 7.591s ago] (6,)
+2024-11-19 15:12:52,387 - models - INFO - Successfully saved car 8907842 to database
+2024-11-19 15:12:52,387 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:52,387 - __main__ - INFO - Successfully saved car 8907842 to database
+2024-11-19 15:12:53,393 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8937652
+2024-11-19 15:12:53,393 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8937652
+2024-11-19 15:12:53,803 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8937652
+2024-11-19 15:12:53,849 - __main__ - INFO - Extracted car data: {'title': 'Kia Forte, 2.0 L, 2020 il, 104 446 km', 'price': 26900.0, 'description': None, 'location': 'Zaqatala', 'brand': 'Kia', 'model': 'Forte', 'year': 2020, 'body_type': 'Sedan', 'color': 'Qırmızı', 'engine_size': 2.0, 'mileage': 104446.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8937652'}
+2024-11-19 15:12:53,849 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:53,849 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:53,849 - sqlalchemy.engine.Engine - INFO - [cached since 9.056s ago] ('8937652', 1, 0)
+2024-11-19 15:12:53,849 - models - INFO - Added new car 8937652
+2024-11-19 15:12:53,849 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:53,849 - sqlalchemy.engine.Engine - INFO - [cached since 9.055s ago] ('8937652', 'Kia Forte, 2.0 L, 2020 il, 104 446 km', 26900.0, 2020, 104446.0, 'Sedan', 'Qırmızı', 2.0, 'Gasoline', 'Avtomat', None, 'Zaqatala', 'Kia', 'Forte', 'Private', None, 'https://turbo.az/autos/8937652', '2024-11-19 13:12:53.849737', '2024-11-19 13:12:53.849742')
+2024-11-19 15:12:53,850 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:53,850 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:53,851 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:53,851 - sqlalchemy.engine.Engine - INFO - [cached since 9.055s ago] (7,)
+2024-11-19 15:12:53,851 - models - INFO - Successfully saved car 8937652 to database
+2024-11-19 15:12:53,851 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:53,851 - __main__ - INFO - Successfully saved car 8937652 to database
+2024-11-19 15:12:54,856 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8809749
+2024-11-19 15:12:54,856 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8809749
+2024-11-19 15:12:55,340 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8809749
+2024-11-19 15:12:55,388 - __main__ - INFO - Extracted car data: {'title': 'Kia Sorento, 2.0 L, 2016 il, 154 000 km', 'price': 34700.0, 'description': None, 'location': 'Bakı', 'brand': 'Kia', 'model': 'Sorento', 'year': 2016, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Ağ', 'engine_size': 2.0, 'mileage': 154000.0, 'transmission': 'Avtomat', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8809749'}
+2024-11-19 15:12:55,388 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:55,388 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:55,388 - sqlalchemy.engine.Engine - INFO - [cached since 10.6s ago] ('8809749', 1, 0)
+2024-11-19 15:12:55,388 - models - INFO - Added new car 8809749
+2024-11-19 15:12:55,388 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:55,388 - sqlalchemy.engine.Engine - INFO - [cached since 10.59s ago] ('8809749', 'Kia Sorento, 2.0 L, 2016 il, 154 000 km', 34700.0, 2016, 154000.0, 'Offroader / SUV, 5 qapı', 'Ağ', 2.0, 'Diesel', 'Avtomat', None, 'Bakı', 'Kia', 'Sorento', 'Private', None, 'https://turbo.az/autos/8809749', '2024-11-19 13:12:55.388753', '2024-11-19 13:12:55.388758')
+2024-11-19 15:12:55,389 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:55,389 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:55,390 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:55,390 - sqlalchemy.engine.Engine - INFO - [cached since 10.59s ago] (8,)
+2024-11-19 15:12:55,390 - models - INFO - Successfully saved car 8809749 to database
+2024-11-19 15:12:55,390 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:55,390 - __main__ - INFO - Successfully saved car 8809749 to database
+2024-11-19 15:12:56,395 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8888651
+2024-11-19 15:12:56,396 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8888651
+2024-11-19 15:12:56,780 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8888651
+2024-11-19 15:12:56,825 - __main__ - INFO - Extracted car data: {'title': 'Kia Forte, 2.0 L, 2019 il, 89 404 km', 'price': 25800.0, 'description': None, 'location': 'Bakı', 'brand': 'Kia', 'model': 'Forte', 'year': 2019, 'body_type': 'Sedan', 'color': 'Göy', 'engine_size': 2.0, 'mileage': 89404.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8888651'}
+2024-11-19 15:12:56,826 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:56,826 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:56,826 - sqlalchemy.engine.Engine - INFO - [cached since 12.03s ago] ('8888651', 1, 0)
+2024-11-19 15:12:56,826 - models - INFO - Added new car 8888651
+2024-11-19 15:12:56,826 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:56,826 - sqlalchemy.engine.Engine - INFO - [cached since 12.03s ago] ('8888651', 'Kia Forte, 2.0 L, 2019 il, 89 404 km', 25800.0, 2019, 89404.0, 'Sedan', 'Göy', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Kia', 'Forte', 'Private', None, 'https://turbo.az/autos/8888651', '2024-11-19 13:12:56.826698', '2024-11-19 13:12:56.826703')
+2024-11-19 15:12:56,827 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:56,827 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:56,828 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:56,828 - sqlalchemy.engine.Engine - INFO - [cached since 12.03s ago] (9,)
+2024-11-19 15:12:56,828 - models - INFO - Successfully saved car 8888651 to database
+2024-11-19 15:12:56,828 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:56,828 - __main__ - INFO - Successfully saved car 8888651 to database
+2024-11-19 15:12:57,833 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8949988
+2024-11-19 15:12:57,833 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8949988
+2024-11-19 15:12:58,297 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8949988
+2024-11-19 15:12:58,342 - __main__ - INFO - Extracted car data: {'title': 'MAN TGX 18.440, 12 L, 2010 il, 1 000 500 km', 'price': 75000.0, 'description': None, 'location': 'Bakı', 'brand': 'MAN', 'model': 'TGX 18.440', 'year': 2010, 'body_type': 'Dartqı', 'color': 'Göy', 'engine_size': 12.0, 'mileage': 1000500.0, 'transmission': 'Avtomat', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8949988'}
+2024-11-19 15:12:58,342 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:58,343 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:58,343 - sqlalchemy.engine.Engine - INFO - [cached since 13.55s ago] ('8949988', 1, 0)
+2024-11-19 15:12:58,343 - models - INFO - Added new car 8949988
+2024-11-19 15:12:58,343 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:58,343 - sqlalchemy.engine.Engine - INFO - [cached since 13.55s ago] ('8949988', 'MAN TGX 18.440, 12 L, 2010 il, 1 000 500 km', 75000.0, 2010, 1000500.0, 'Dartqı', 'Göy', 12.0, 'Diesel', 'Avtomat', None, 'Bakı', 'MAN', 'TGX 18.440', 'Private', None, 'https://turbo.az/autos/8949988', '2024-11-19 13:12:58.343309', '2024-11-19 13:12:58.343315')
+2024-11-19 15:12:58,343 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:58,344 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:58,344 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:58,344 - sqlalchemy.engine.Engine - INFO - [cached since 13.55s ago] (10,)
+2024-11-19 15:12:58,344 - models - INFO - Successfully saved car 8949988 to database
+2024-11-19 15:12:58,344 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:58,344 - __main__ - INFO - Successfully saved car 8949988 to database
+2024-11-19 15:12:59,349 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8555915
+2024-11-19 15:12:59,350 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8555915
+2024-11-19 15:12:59,707 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8555915
+2024-11-19 15:12:59,752 - __main__ - INFO - Extracted car data: {'title': 'BYD Qin Plus, 1.5 L, 2024 il, yeni', 'price': 16300.0, 'description': None, 'location': 'Bakı', 'brand': 'BYD', 'model': 'Qin Plus', 'year': 2024, 'body_type': 'Sedan', 'color': 'Ağ', 'engine_size': 1.5, 'mileage': 0.0, 'transmission': 'Avtomat', 'fuel_type': 'Hybrid', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8555915'}
+2024-11-19 15:12:59,752 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:59,753 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:12:59,753 - sqlalchemy.engine.Engine - INFO - [cached since 14.96s ago] ('8555915', 1, 0)
+2024-11-19 15:12:59,753 - models - INFO - Added new car 8555915
+2024-11-19 15:12:59,753 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:12:59,753 - sqlalchemy.engine.Engine - INFO - [cached since 14.96s ago] ('8555915', 'BYD Qin Plus, 1.5 L, 2024 il, yeni', 16300.0, 2024, 0.0, 'Sedan', 'Ağ', 1.5, 'Hybrid', 'Avtomat', None, 'Bakı', 'BYD', 'Qin Plus', 'Private', None, 'https://turbo.az/autos/8555915', '2024-11-19 13:12:59.753280', '2024-11-19 13:12:59.753286')
+2024-11-19 15:12:59,753 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:12:59,754 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:12:59,754 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:12:59,754 - sqlalchemy.engine.Engine - INFO - [cached since 14.96s ago] (11,)
+2024-11-19 15:12:59,754 - models - INFO - Successfully saved car 8555915 to database
+2024-11-19 15:12:59,754 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:12:59,754 - __main__ - INFO - Successfully saved car 8555915 to database
+2024-11-19 15:13:00,756 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8896821
+2024-11-19 15:13:00,757 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8896821
+2024-11-19 15:13:01,265 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8896821
+2024-11-19 15:13:01,311 - __main__ - INFO - Extracted car data: {'title': 'Kia Sorento, 2.0 L, 2016 il, 132 300 km', 'price': 36900.0, 'description': None, 'location': 'Bakı', 'brand': 'Kia', 'model': 'Sorento', 'year': 2016, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Yaş Asfalt', 'engine_size': 2.0, 'mileage': 132300.0, 'transmission': 'Avtomat', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8896821'}
+2024-11-19 15:13:01,312 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:01,312 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:01,312 - sqlalchemy.engine.Engine - INFO - [cached since 16.52s ago] ('8896821', 1, 0)
+2024-11-19 15:13:01,312 - models - INFO - Added new car 8896821
+2024-11-19 15:13:01,312 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:01,312 - sqlalchemy.engine.Engine - INFO - [cached since 16.52s ago] ('8896821', 'Kia Sorento, 2.0 L, 2016 il, 132 300 km', 36900.0, 2016, 132300.0, 'Offroader / SUV, 5 qapı', 'Yaş Asfalt', 2.0, 'Diesel', 'Avtomat', None, 'Bakı', 'Kia', 'Sorento', 'Private', None, 'https://turbo.az/autos/8896821', '2024-11-19 13:13:01.312487', '2024-11-19 13:13:01.312493')
+2024-11-19 15:13:01,313 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:01,313 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:01,313 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:01,313 - sqlalchemy.engine.Engine - INFO - [cached since 16.52s ago] (12,)
+2024-11-19 15:13:01,314 - models - INFO - Successfully saved car 8896821 to database
+2024-11-19 15:13:01,314 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:01,314 - __main__ - INFO - Successfully saved car 8896821 to database
+2024-11-19 15:13:02,319 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8949569
+2024-11-19 15:13:02,319 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8949569
+2024-11-19 15:13:02,779 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8949569
+2024-11-19 15:13:02,805 - __main__ - INFO - Extracted car data: {'title': 'Skoda Rapid, 1.6 L, 2020 il, 70 000 km', 'price': 22900.0, 'description': None, 'location': 'Bakı', 'brand': 'Skoda', 'model': 'Rapid', 'year': 2020, 'body_type': 'Liftbek', 'color': 'Göy', 'engine_size': 1.6, 'mileage': 70000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8949569'}
+2024-11-19 15:13:02,806 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:02,806 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:02,806 - sqlalchemy.engine.Engine - INFO - [cached since 18.01s ago] ('8949569', 1, 0)
+2024-11-19 15:13:02,806 - models - INFO - Added new car 8949569
+2024-11-19 15:13:02,806 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:02,806 - sqlalchemy.engine.Engine - INFO - [cached since 18.01s ago] ('8949569', 'Skoda Rapid, 1.6 L, 2020 il, 70 000 km', 22900.0, 2020, 70000.0, 'Liftbek', 'Göy', 1.6, 'Gasoline', 'Avtomat', None, 'Bakı', 'Skoda', 'Rapid', 'Private', None, 'https://turbo.az/autos/8949569', '2024-11-19 13:13:02.806740', '2024-11-19 13:13:02.806744')
+2024-11-19 15:13:02,807 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:02,808 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:02,808 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:02,808 - sqlalchemy.engine.Engine - INFO - [cached since 18.01s ago] (13,)
+2024-11-19 15:13:02,808 - models - INFO - Successfully saved car 8949569 to database
+2024-11-19 15:13:02,808 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:02,808 - __main__ - INFO - Successfully saved car 8949569 to database
+2024-11-19 15:13:03,813 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960038
+2024-11-19 15:13:03,814 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960038
+2024-11-19 15:13:04,237 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960038
+2024-11-19 15:13:04,275 - __main__ - INFO - Extracted car data: {'title': 'BMW 528, 2.0 L, 2016 il, 101 000 km', 'price': 20400.0, 'description': None, 'location': 'Bakı', 'brand': 'BMW', 'model': '528', 'year': 2016, 'body_type': 'Sedan', 'color': 'Ağ', 'engine_size': 2.0, 'mileage': 101000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960038'}
+2024-11-19 15:13:04,276 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:04,276 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:04,276 - sqlalchemy.engine.Engine - INFO - [cached since 19.48s ago] ('8960038', 1, 0)
+2024-11-19 15:13:04,277 - models - INFO - Added new car 8960038
+2024-11-19 15:13:04,277 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:04,277 - sqlalchemy.engine.Engine - INFO - [cached since 19.48s ago] ('8960038', 'BMW 528, 2.0 L, 2016 il, 101 000 km', 20400.0, 2016, 101000.0, 'Sedan', 'Ağ', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'BMW', '528', 'Private', None, 'https://turbo.az/autos/8960038', '2024-11-19 13:13:04.277087', '2024-11-19 13:13:04.277092')
+2024-11-19 15:13:04,277 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:04,278 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:04,278 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:04,278 - sqlalchemy.engine.Engine - INFO - [cached since 19.48s ago] (14,)
+2024-11-19 15:13:04,279 - models - INFO - Successfully saved car 8960038 to database
+2024-11-19 15:13:04,279 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:04,279 - __main__ - INFO - Successfully saved car 8960038 to database
+2024-11-19 15:13:05,282 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8929485
+2024-11-19 15:13:05,282 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8929485
+2024-11-19 15:13:05,669 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8929485
+2024-11-19 15:13:05,747 - __main__ - INFO - Extracted car data: {'title': 'Mercedes C 180, 1.8 L, 1994 il, 500 000 km', 'price': 8700.0, 'description': None, 'location': 'Bakı', 'brand': 'Mercedes', 'model': 'C 180', 'year': 1994, 'body_type': 'Sedan', 'color': 'Ağ', 'engine_size': 1.8, 'mileage': 500000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8929485'}
+2024-11-19 15:13:05,748 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:05,748 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:05,748 - sqlalchemy.engine.Engine - INFO - [cached since 20.95s ago] ('8929485', 1, 0)
+2024-11-19 15:13:05,748 - models - INFO - Added new car 8929485
+2024-11-19 15:13:05,748 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:05,748 - sqlalchemy.engine.Engine - INFO - [cached since 20.95s ago] ('8929485', 'Mercedes C 180, 1.8 L, 1994 il, 500 000 km', 8700.0, 1994, 500000.0, 'Sedan', 'Ağ', 1.8, 'Gasoline', 'Avtomat', None, 'Bakı', 'Mercedes', 'C 180', 'Private', None, 'https://turbo.az/autos/8929485', '2024-11-19 13:13:05.748327', '2024-11-19 13:13:05.748331')
+2024-11-19 15:13:05,748 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:05,749 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:05,749 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:05,749 - sqlalchemy.engine.Engine - INFO - [cached since 20.95s ago] (15,)
+2024-11-19 15:13:05,749 - models - INFO - Successfully saved car 8929485 to database
+2024-11-19 15:13:05,749 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:05,749 - __main__ - INFO - Successfully saved car 8929485 to database
+2024-11-19 15:13:06,754 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/7804284
+2024-11-19 15:13:06,755 - __main__ - INFO - Fetching URL: https://turbo.az/autos/7804284
+2024-11-19 15:13:07,145 - __main__ - INFO - Successfully fetched https://turbo.az/autos/7804284
+2024-11-19 15:13:07,186 - __main__ - INFO - Extracted car data: {'title': 'Hyundai Mighty EX9, 3.9 L, 2023 il, yeni', 'price': 74500.0, 'description': None, 'location': 'Bakı', 'brand': 'Hyundai', 'model': 'Mighty EX9', 'year': 2023, 'body_type': 'Yük maşını', 'color': 'Ağ', 'engine_size': 3.9, 'mileage': 0.0, 'transmission': 'Mexaniki', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/7804284'}
+2024-11-19 15:13:07,187 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:07,187 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:07,187 - sqlalchemy.engine.Engine - INFO - [cached since 22.39s ago] ('7804284', 1, 0)
+2024-11-19 15:13:07,187 - models - INFO - Added new car 7804284
+2024-11-19 15:13:07,187 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:07,187 - sqlalchemy.engine.Engine - INFO - [cached since 22.39s ago] ('7804284', 'Hyundai Mighty EX9, 3.9 L, 2023 il, yeni', 74500.0, 2023, 0.0, 'Yük maşını', 'Ağ', 3.9, 'Diesel', 'Mexaniki', None, 'Bakı', 'Hyundai', 'Mighty EX9', 'Private', None, 'https://turbo.az/autos/7804284', '2024-11-19 13:13:07.187472', '2024-11-19 13:13:07.187477')
+2024-11-19 15:13:07,187 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:07,188 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:07,188 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:07,188 - sqlalchemy.engine.Engine - INFO - [cached since 22.39s ago] (16,)
+2024-11-19 15:13:07,188 - models - INFO - Successfully saved car 7804284 to database
+2024-11-19 15:13:07,188 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:07,189 - __main__ - INFO - Successfully saved car 7804284 to database
+2024-11-19 15:13:08,194 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8889791
+2024-11-19 15:13:08,194 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8889791
+2024-11-19 15:13:08,596 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8889791
+2024-11-19 15:13:08,641 - __main__ - INFO - Extracted car data: {'title': 'Mercedes S 350 d, 3.0 L, 2016 il, 117 000 km', 'price': 49000.0, 'description': None, 'location': 'Bakı', 'brand': 'Mercedes', 'model': 'S 350 d', 'year': 2016, 'body_type': 'Sedan', 'color': 'Qara', 'engine_size': 3.0, 'mileage': 117000.0, 'transmission': 'Avtomat', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8889791'}
+2024-11-19 15:13:08,641 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:08,641 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:08,642 - sqlalchemy.engine.Engine - INFO - [cached since 23.85s ago] ('8889791', 1, 0)
+2024-11-19 15:13:08,642 - models - INFO - Added new car 8889791
+2024-11-19 15:13:08,642 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:08,642 - sqlalchemy.engine.Engine - INFO - [cached since 23.85s ago] ('8889791', 'Mercedes S 350 d, 3.0 L, 2016 il, 117 000 km', 49000.0, 2016, 117000.0, 'Sedan', 'Qara', 3.0, 'Diesel', 'Avtomat', None, 'Bakı', 'Mercedes', 'S 350 d', 'Private', None, 'https://turbo.az/autos/8889791', '2024-11-19 13:13:08.642165', '2024-11-19 13:13:08.642170')
+2024-11-19 15:13:08,643 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:08,643 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:08,644 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:08,644 - sqlalchemy.engine.Engine - INFO - [cached since 23.85s ago] (17,)
+2024-11-19 15:13:08,644 - models - INFO - Successfully saved car 8889791 to database
+2024-11-19 15:13:08,644 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:08,644 - __main__ - INFO - Successfully saved car 8889791 to database
+2024-11-19 15:13:09,649 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960036
+2024-11-19 15:13:09,649 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960036
+2024-11-19 15:13:10,279 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960036
+2024-11-19 15:13:10,325 - __main__ - INFO - Extracted car data: {'title': 'LADA (VAZ) 2106, 1.5 L, 1985 il, 98 614 km', 'price': 2400.0, 'description': None, 'location': 'Neftçala', 'brand': 'LADA (VAZ)', 'model': '2106', 'year': 1985, 'body_type': 'Sedan', 'color': 'Qırmızı', 'engine_size': 1.5, 'mileage': 98614.0, 'transmission': 'Mexaniki', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960036'}
+2024-11-19 15:13:10,325 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:10,325 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:10,325 - sqlalchemy.engine.Engine - INFO - [cached since 25.53s ago] ('8960036', 1, 0)
+2024-11-19 15:13:10,325 - models - INFO - Added new car 8960036
+2024-11-19 15:13:10,325 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:10,325 - sqlalchemy.engine.Engine - INFO - [cached since 25.53s ago] ('8960036', 'LADA (VAZ) 2106, 1.5 L, 1985 il, 98 614 km', 2400.0, 1985, 98614.0, 'Sedan', 'Qırmızı', 1.5, 'Gasoline', 'Mexaniki', None, 'Neftçala', 'LADA (VAZ)', '2106', 'Private', None, 'https://turbo.az/autos/8960036', '2024-11-19 13:13:10.325754', '2024-11-19 13:13:10.325759')
+2024-11-19 15:13:10,326 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:10,327 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:10,327 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:10,327 - sqlalchemy.engine.Engine - INFO - [cached since 25.53s ago] (18,)
+2024-11-19 15:13:10,327 - models - INFO - Successfully saved car 8960036 to database
+2024-11-19 15:13:10,327 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:10,327 - __main__ - INFO - Successfully saved car 8960036 to database
+2024-11-19 15:13:11,332 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8912897
+2024-11-19 15:13:11,333 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8912897
+2024-11-19 15:13:11,811 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8912897
+2024-11-19 15:13:11,856 - __main__ - INFO - Extracted car data: {'title': 'Mercedes C 200, 2.0 L, 2001 il, 395 627 km', 'price': 11700.0, 'description': None, 'location': 'Bakı', 'brand': 'Mercedes', 'model': 'C 200', 'year': 2001, 'body_type': 'Sedan', 'color': 'Qara', 'engine_size': 2.0, 'mileage': 395627.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8912897'}
+2024-11-19 15:13:11,857 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:11,857 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:11,857 - sqlalchemy.engine.Engine - INFO - [cached since 27.06s ago] ('8912897', 1, 0)
+2024-11-19 15:13:11,857 - models - INFO - Added new car 8912897
+2024-11-19 15:13:11,857 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:11,857 - sqlalchemy.engine.Engine - INFO - [cached since 27.06s ago] ('8912897', 'Mercedes C 200, 2.0 L, 2001 il, 395 627 km', 11700.0, 2001, 395627.0, 'Sedan', 'Qara', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Mercedes', 'C 200', 'Private', None, 'https://turbo.az/autos/8912897', '2024-11-19 13:13:11.857695', '2024-11-19 13:13:11.857700')
+2024-11-19 15:13:11,858 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:11,858 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:11,859 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:11,859 - sqlalchemy.engine.Engine - INFO - [cached since 27.06s ago] (19,)
+2024-11-19 15:13:11,859 - models - INFO - Successfully saved car 8912897 to database
+2024-11-19 15:13:11,859 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:11,859 - __main__ - INFO - Successfully saved car 8912897 to database
+2024-11-19 15:13:12,861 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960030
+2024-11-19 15:13:12,861 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960030
+2024-11-19 15:13:13,346 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960030
+2024-11-19 15:13:13,377 - __main__ - INFO - Extracted car data: {'title': 'LADA (VAZ) 2106, 1.5 L, 1990 il, 221 000 km', 'price': 4300.0, 'description': None, 'location': 'Gəncə', 'brand': 'LADA (VAZ)', 'model': '2106', 'year': 1990, 'body_type': 'Sedan', 'color': 'Qırmızı', 'engine_size': 1.5, 'mileage': 221000.0, 'transmission': 'Mexaniki', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960030'}
+2024-11-19 15:13:13,377 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:13,377 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:13,377 - sqlalchemy.engine.Engine - INFO - [cached since 28.58s ago] ('8960030', 1, 0)
+2024-11-19 15:13:13,377 - models - INFO - Added new car 8960030
+2024-11-19 15:13:13,378 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:13,378 - sqlalchemy.engine.Engine - INFO - [cached since 28.58s ago] ('8960030', 'LADA (VAZ) 2106, 1.5 L, 1990 il, 221 000 km', 4300.0, 1990, 221000.0, 'Sedan', 'Qırmızı', 1.5, 'Gasoline', 'Mexaniki', None, 'Gəncə', 'LADA (VAZ)', '2106', 'Private', None, 'https://turbo.az/autos/8960030', '2024-11-19 13:13:13.377942', '2024-11-19 13:13:13.377946')
+2024-11-19 15:13:13,378 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:13,379 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:13,379 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:13,379 - sqlalchemy.engine.Engine - INFO - [cached since 28.58s ago] (20,)
+2024-11-19 15:13:13,379 - models - INFO - Successfully saved car 8960030 to database
+2024-11-19 15:13:13,379 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:13,379 - __main__ - INFO - Successfully saved car 8960030 to database
+2024-11-19 15:13:14,384 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8884833
+2024-11-19 15:13:14,384 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8884833
+2024-11-19 15:13:14,988 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8884833
+2024-11-19 15:13:15,033 - __main__ - INFO - Extracted car data: {'title': 'Opel Astra, 1.3 L, 2007 il, 296 000 km', 'price': 10200.0, 'description': None, 'location': 'Beyləqan', 'brand': 'Opel', 'model': 'Astra', 'year': 2007, 'body_type': 'Hetçbek, 5 qapı', 'color': 'Gümüşü', 'engine_size': 1.3, 'mileage': 296000.0, 'transmission': 'Mexaniki', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8884833'}
+2024-11-19 15:13:15,034 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:15,034 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:15,034 - sqlalchemy.engine.Engine - INFO - [cached since 30.24s ago] ('8884833', 1, 0)
+2024-11-19 15:13:15,034 - models - INFO - Added new car 8884833
+2024-11-19 15:13:15,034 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:15,034 - sqlalchemy.engine.Engine - INFO - [cached since 30.24s ago] ('8884833', 'Opel Astra, 1.3 L, 2007 il, 296 000 km', 10200.0, 2007, 296000.0, 'Hetçbek, 5 qapı', 'Gümüşü', 1.3, 'Diesel', 'Mexaniki', None, 'Beyləqan', 'Opel', 'Astra', 'Private', None, 'https://turbo.az/autos/8884833', '2024-11-19 13:13:15.034438', '2024-11-19 13:13:15.034443')
+2024-11-19 15:13:15,034 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:15,035 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:15,035 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:15,035 - sqlalchemy.engine.Engine - INFO - [cached since 30.24s ago] (21,)
+2024-11-19 15:13:15,035 - models - INFO - Successfully saved car 8884833 to database
+2024-11-19 15:13:15,035 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:15,035 - __main__ - INFO - Successfully saved car 8884833 to database
+2024-11-19 15:13:16,041 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8844844
+2024-11-19 15:13:16,041 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8844844
+2024-11-19 15:13:16,432 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8844844
+2024-11-19 15:13:16,475 - __main__ - INFO - Extracted car data: {'title': 'Toyota Voxy, 2.0 L, 2015 il, 150 000 km', 'price': 36500.0, 'description': None, 'location': 'Bakı', 'brand': 'Toyota', 'model': 'Voxy', 'year': 2015, 'body_type': 'Minivan', 'color': 'Qara', 'engine_size': 2.0, 'mileage': 150000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8844844'}
+2024-11-19 15:13:16,475 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:16,476 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:16,476 - sqlalchemy.engine.Engine - INFO - [cached since 31.68s ago] ('8844844', 1, 0)
+2024-11-19 15:13:16,476 - models - INFO - Added new car 8844844
+2024-11-19 15:13:16,476 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:16,476 - sqlalchemy.engine.Engine - INFO - [cached since 31.68s ago] ('8844844', 'Toyota Voxy, 2.0 L, 2015 il, 150 000 km', 36500.0, 2015, 150000.0, 'Minivan', 'Qara', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Toyota', 'Voxy', 'Private', None, 'https://turbo.az/autos/8844844', '2024-11-19 13:13:16.476418', '2024-11-19 13:13:16.476426')
+2024-11-19 15:13:16,477 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:16,477 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:16,478 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:16,478 - sqlalchemy.engine.Engine - INFO - [cached since 31.68s ago] (22,)
+2024-11-19 15:13:16,478 - models - INFO - Successfully saved car 8844844 to database
+2024-11-19 15:13:16,478 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:16,478 - __main__ - INFO - Successfully saved car 8844844 to database
+2024-11-19 15:13:17,483 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8919786
+2024-11-19 15:13:17,483 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8919786
+2024-11-19 15:13:17,974 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8919786
+2024-11-19 15:13:18,015 - __main__ - INFO - Extracted car data: {'title': 'Opel Astra, 1.4 L, 2009 il, 187 234 km', 'price': 12600.0, 'description': None, 'location': 'Gəncə', 'brand': 'Opel', 'model': 'Astra', 'year': 2009, 'body_type': 'Hetçbek, 5 qapı', 'color': 'Yaş Asfalt', 'engine_size': 1.4, 'mileage': 187234.0, 'transmission': 'Mexaniki', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8919786'}
+2024-11-19 15:13:18,015 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:18,015 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:18,015 - sqlalchemy.engine.Engine - INFO - [cached since 33.22s ago] ('8919786', 1, 0)
+2024-11-19 15:13:18,016 - models - INFO - Added new car 8919786
+2024-11-19 15:13:18,016 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:18,016 - sqlalchemy.engine.Engine - INFO - [cached since 33.22s ago] ('8919786', 'Opel Astra, 1.4 L, 2009 il, 187 234 km', 12600.0, 2009, 187234.0, 'Hetçbek, 5 qapı', 'Yaş Asfalt', 1.4, 'Gasoline', 'Mexaniki', None, 'Gəncə', 'Opel', 'Astra', 'Private', None, 'https://turbo.az/autos/8919786', '2024-11-19 13:13:18.016047', '2024-11-19 13:13:18.016052')
+2024-11-19 15:13:18,016 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:18,017 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:18,017 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:18,017 - sqlalchemy.engine.Engine - INFO - [cached since 33.22s ago] (23,)
+2024-11-19 15:13:18,017 - models - INFO - Successfully saved car 8919786 to database
+2024-11-19 15:13:18,017 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:18,017 - __main__ - INFO - Successfully saved car 8919786 to database
+2024-11-19 15:13:19,022 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8938202
+2024-11-19 15:13:19,022 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8938202
+2024-11-19 15:13:19,407 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8938202
+2024-11-19 15:13:19,454 - __main__ - INFO - Extracted car data: {'title': 'Toyota Land Cruiser Prado, 2.7 L, 2012 il, 193 000 km', 'price': 39500.0, 'description': None, 'location': 'Şəmkir', 'brand': 'Toyota', 'model': 'Land Cruiser Prado', 'year': 2012, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Qara', 'engine_size': 2.7, 'mileage': 193000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8938202'}
+2024-11-19 15:13:19,454 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:19,454 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:19,454 - sqlalchemy.engine.Engine - INFO - [cached since 34.66s ago] ('8938202', 1, 0)
+2024-11-19 15:13:19,454 - models - INFO - Added new car 8938202
+2024-11-19 15:13:19,454 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:19,454 - sqlalchemy.engine.Engine - INFO - [cached since 34.66s ago] ('8938202', 'Toyota Land Cruiser Prado, 2.7 L, 2012 il, 193 000 km', 39500.0, 2012, 193000.0, 'Offroader / SUV, 5 qapı', 'Qara', 2.7, 'Gasoline', 'Avtomat', None, 'Şəmkir', 'Toyota', 'Land Cruiser Prado', 'Private', None, 'https://turbo.az/autos/8938202', '2024-11-19 13:13:19.454728', '2024-11-19 13:13:19.454733')
+2024-11-19 15:13:19,455 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:19,455 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:19,456 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:19,456 - sqlalchemy.engine.Engine - INFO - [cached since 34.66s ago] (24,)
+2024-11-19 15:13:19,456 - models - INFO - Successfully saved car 8938202 to database
+2024-11-19 15:13:19,456 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:19,456 - __main__ - INFO - Successfully saved car 8938202 to database
+2024-11-19 15:13:20,461 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960031
+2024-11-19 15:13:20,465 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960031
+2024-11-19 15:13:20,839 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960031
+2024-11-19 15:13:20,898 - __main__ - INFO - Extracted car data: {'title': 'Lexus RX 200t, 2.0 L, 2017 il, 113 500 km', 'price': 35000.0, 'description': None, 'location': 'Bakı', 'brand': 'Lexus', 'model': 'RX 200t', 'year': 2017, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Yaş Asfalt', 'engine_size': 2.0, 'mileage': 113500.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960031'}
+2024-11-19 15:13:20,898 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:20,898 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:20,898 - sqlalchemy.engine.Engine - INFO - [cached since 36.11s ago] ('8960031', 1, 0)
+2024-11-19 15:13:20,900 - models - INFO - Added new car 8960031
+2024-11-19 15:13:20,900 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:20,900 - sqlalchemy.engine.Engine - INFO - [cached since 36.11s ago] ('8960031', 'Lexus RX 200t, 2.0 L, 2017 il, 113 500 km', 35000.0, 2017, 113500.0, 'Offroader / SUV, 5 qapı', 'Yaş Asfalt', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Lexus', 'RX 200t', 'Private', None, 'https://turbo.az/autos/8960031', '2024-11-19 13:13:20.900009', '2024-11-19 13:13:20.900021')
+2024-11-19 15:13:20,900 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:20,901 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:20,901 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:20,901 - sqlalchemy.engine.Engine - INFO - [cached since 36.1s ago] (25,)
+2024-11-19 15:13:20,901 - models - INFO - Successfully saved car 8960031 to database
+2024-11-19 15:13:20,901 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:20,901 - __main__ - INFO - Successfully saved car 8960031 to database
+2024-11-19 15:13:21,906 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960026
+2024-11-19 15:13:21,906 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960026
+2024-11-19 15:13:22,359 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960026
+2024-11-19 15:13:22,405 - __main__ - INFO - Extracted car data: {'title': 'Mitsubishi Pajero io, 1.8 L, 1998 il, 287 264 km', 'price': 7000.0, 'description': None, 'location': 'Quba', 'brand': 'Mitsubishi', 'model': 'Pajero io', 'year': 1998, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Ağ', 'engine_size': 1.8, 'mileage': 287264.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960026'}
+2024-11-19 15:13:22,405 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:22,406 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:22,406 - sqlalchemy.engine.Engine - INFO - [cached since 37.61s ago] ('8960026', 1, 0)
+2024-11-19 15:13:22,406 - models - INFO - Added new car 8960026
+2024-11-19 15:13:22,406 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:22,406 - sqlalchemy.engine.Engine - INFO - [cached since 37.61s ago] ('8960026', 'Mitsubishi Pajero io, 1.8 L, 1998 il, 287 264 km', 7000.0, 1998, 287264.0, 'Offroader / SUV, 5 qapı', 'Ağ', 1.8, 'Gasoline', 'Avtomat', None, 'Quba', 'Mitsubishi', 'Pajero io', 'Private', None, 'https://turbo.az/autos/8960026', '2024-11-19 13:13:22.406318', '2024-11-19 13:13:22.406323')
+2024-11-19 15:13:22,406 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:22,407 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:22,407 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:22,407 - sqlalchemy.engine.Engine - INFO - [cached since 37.61s ago] (26,)
+2024-11-19 15:13:22,407 - models - INFO - Successfully saved car 8960026 to database
+2024-11-19 15:13:22,407 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:22,407 - __main__ - INFO - Successfully saved car 8960026 to database
+2024-11-19 15:13:23,412 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960028
+2024-11-19 15:13:23,413 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960028
+2024-11-19 15:13:23,812 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960028
+2024-11-19 15:13:23,841 - __main__ - INFO - Extracted car data: {'title': 'Iran Khodro Samand, 1.8 L, 2006 il, 224 000 km', 'price': 5800.0, 'description': None, 'location': 'Quba', 'brand': 'Iran Khodro', 'model': 'Samand', 'year': 2006, 'body_type': 'Sedan', 'color': 'Göy', 'engine_size': 1.8, 'mileage': 224000.0, 'transmission': 'Mexaniki', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960028'}
+2024-11-19 15:13:23,842 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:23,842 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:23,857 - sqlalchemy.engine.Engine - INFO - [cached since 39.06s ago] ('8960028', 1, 0)
+2024-11-19 15:13:23,857 - models - INFO - Added new car 8960028
+2024-11-19 15:13:23,858 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:23,858 - sqlalchemy.engine.Engine - INFO - [cached since 39.06s ago] ('8960028', 'Iran Khodro Samand, 1.8 L, 2006 il, 224 000 km', 5800.0, 2006, 224000.0, 'Sedan', 'Göy', 1.8, 'Gasoline', 'Mexaniki', None, 'Quba', 'Iran Khodro', 'Samand', 'Private', None, 'https://turbo.az/autos/8960028', '2024-11-19 13:13:23.857838', '2024-11-19 13:13:23.857845')
+2024-11-19 15:13:23,858 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:23,859 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:23,859 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:23,859 - sqlalchemy.engine.Engine - INFO - [cached since 39.06s ago] (27,)
+2024-11-19 15:13:23,859 - models - INFO - Successfully saved car 8960028 to database
+2024-11-19 15:13:23,859 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:23,859 - __main__ - INFO - Successfully saved car 8960028 to database
+2024-11-19 15:13:24,864 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8926824
+2024-11-19 15:13:24,865 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8926824
+2024-11-19 15:13:25,300 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8926824
+2024-11-19 15:13:25,342 - __main__ - INFO - Extracted car data: {'title': 'Maserati Quattroporte, 4.7 L, 2011 il, 72 600 km', 'price': 27000.0, 'description': None, 'location': 'Bakı', 'brand': 'Maserati', 'model': 'Quattroporte', 'year': 2011, 'body_type': 'Sedan', 'color': 'Qara', 'engine_size': 4.7, 'mileage': 72600.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8926824'}
+2024-11-19 15:13:25,343 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:25,343 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:25,343 - sqlalchemy.engine.Engine - INFO - [cached since 40.55s ago] ('8926824', 1, 0)
+2024-11-19 15:13:25,343 - models - INFO - Added new car 8926824
+2024-11-19 15:13:25,343 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:25,343 - sqlalchemy.engine.Engine - INFO - [cached since 40.55s ago] ('8926824', 'Maserati Quattroporte, 4.7 L, 2011 il, 72 600 km', 27000.0, 2011, 72600.0, 'Sedan', 'Qara', 4.7, 'Gasoline', 'Avtomat', None, 'Bakı', 'Maserati', 'Quattroporte', 'Private', None, 'https://turbo.az/autos/8926824', '2024-11-19 13:13:25.343517', '2024-11-19 13:13:25.343522')
+2024-11-19 15:13:25,344 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:25,344 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:25,344 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:25,344 - sqlalchemy.engine.Engine - INFO - [cached since 40.55s ago] (28,)
+2024-11-19 15:13:25,345 - models - INFO - Successfully saved car 8926824 to database
+2024-11-19 15:13:25,345 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:25,345 - __main__ - INFO - Successfully saved car 8926824 to database
+2024-11-19 15:13:26,350 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960037
+2024-11-19 15:13:26,350 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960037
+2024-11-19 15:13:26,815 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960037
+2024-11-19 15:13:26,855 - __main__ - INFO - Extracted car data: {'title': 'Mercedes C 230, 2.3 L, 1999 il, 329 000 km', 'price': 2600.0, 'description': None, 'location': 'Salyan', 'brand': 'Mercedes', 'model': 'C 230', 'year': 1999, 'body_type': 'Sedan', 'color': 'Qızılı', 'engine_size': 2.3, 'mileage': 329000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960037'}
+2024-11-19 15:13:26,856 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:26,856 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:26,856 - sqlalchemy.engine.Engine - INFO - [cached since 42.06s ago] ('8960037', 1, 0)
+2024-11-19 15:13:26,856 - models - INFO - Added new car 8960037
+2024-11-19 15:13:26,856 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:26,856 - sqlalchemy.engine.Engine - INFO - [cached since 42.06s ago] ('8960037', 'Mercedes C 230, 2.3 L, 1999 il, 329 000 km', 2600.0, 1999, 329000.0, 'Sedan', 'Qızılı', 2.3, 'Gasoline', 'Avtomat', None, 'Salyan', 'Mercedes', 'C 230', 'Private', None, 'https://turbo.az/autos/8960037', '2024-11-19 13:13:26.856495', '2024-11-19 13:13:26.856500')
+2024-11-19 15:13:26,857 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:26,857 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:26,857 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:26,857 - sqlalchemy.engine.Engine - INFO - [cached since 42.06s ago] (29,)
+2024-11-19 15:13:26,857 - models - INFO - Successfully saved car 8960037 to database
+2024-11-19 15:13:26,857 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:26,857 - __main__ - INFO - Successfully saved car 8960037 to database
+2024-11-19 15:13:27,863 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960025
+2024-11-19 15:13:27,863 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960025
+2024-11-19 15:13:28,321 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960025
+2024-11-19 15:13:28,361 - __main__ - INFO - Extracted car data: {'title': 'LADA (VAZ) Niva, 1.7 L, 2013 il, 250 000 km', 'price': 8800.0, 'description': None, 'location': 'Mingəçevir', 'brand': 'LADA (VAZ)', 'model': 'Niva', 'year': 2013, 'body_type': 'Offroader / SUV, 3 qapı', 'color': 'Ağ', 'engine_size': 1.7, 'mileage': 250000.0, 'transmission': 'Mexaniki', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960025'}
+2024-11-19 15:13:28,361 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:28,361 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:28,361 - sqlalchemy.engine.Engine - INFO - [cached since 43.57s ago] ('8960025', 1, 0)
+2024-11-19 15:13:28,361 - models - INFO - Added new car 8960025
+2024-11-19 15:13:28,362 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:28,362 - sqlalchemy.engine.Engine - INFO - [cached since 43.57s ago] ('8960025', 'LADA (VAZ) Niva, 1.7 L, 2013 il, 250 000 km', 8800.0, 2013, 250000.0, 'Offroader / SUV, 3 qapı', 'Ağ', 1.7, 'Gasoline', 'Mexaniki', None, 'Mingəçevir', 'LADA (VAZ)', 'Niva', 'Private', None, 'https://turbo.az/autos/8960025', '2024-11-19 13:13:28.361907', '2024-11-19 13:13:28.361912')
+2024-11-19 15:13:28,362 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:28,363 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:28,363 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:28,363 - sqlalchemy.engine.Engine - INFO - [cached since 43.57s ago] (30,)
+2024-11-19 15:13:28,363 - models - INFO - Successfully saved car 8960025 to database
+2024-11-19 15:13:28,363 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:28,363 - __main__ - INFO - Successfully saved car 8960025 to database
+2024-11-19 15:13:29,368 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959713
+2024-11-19 15:13:29,368 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959713
+2024-11-19 15:13:29,759 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959713
+2024-11-19 15:13:29,803 - __main__ - INFO - Extracted car data: {'title': 'Jeep Grand Cherokee, 2.7 L, 2000 il, 220 000 km', 'price': 13800.0, 'description': None, 'location': 'Bakı', 'brand': 'Jeep', 'model': 'Grand Cherokee', 'year': 2000, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Qara', 'engine_size': 2.7, 'mileage': 220000.0, 'transmission': 'Avtomat', 'fuel_type': 'Diesel', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8959713'}
+2024-11-19 15:13:29,803 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:29,804 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:29,804 - sqlalchemy.engine.Engine - INFO - [cached since 45.01s ago] ('8959713', 1, 0)
+2024-11-19 15:13:29,804 - models - INFO - Added new car 8959713
+2024-11-19 15:13:29,804 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:29,804 - sqlalchemy.engine.Engine - INFO - [cached since 45.01s ago] ('8959713', 'Jeep Grand Cherokee, 2.7 L, 2000 il, 220 000 km', 13800.0, 2000, 220000.0, 'Offroader / SUV, 5 qapı', 'Qara', 2.7, 'Diesel', 'Avtomat', None, 'Bakı', 'Jeep', 'Grand Cherokee', 'Private', None, 'https://turbo.az/autos/8959713', '2024-11-19 13:13:29.804295', '2024-11-19 13:13:29.804299')
+2024-11-19 15:13:29,804 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:29,805 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:29,805 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:29,805 - sqlalchemy.engine.Engine - INFO - [cached since 45.01s ago] (31,)
+2024-11-19 15:13:29,805 - models - INFO - Successfully saved car 8959713 to database
+2024-11-19 15:13:29,805 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:29,805 - __main__ - INFO - Successfully saved car 8959713 to database
+2024-11-19 15:13:30,810 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959956
+2024-11-19 15:13:30,811 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959956
+2024-11-19 15:13:31,257 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959956
+2024-11-19 15:13:31,303 - __main__ - INFO - Extracted car data: {'title': 'Kia Optima, 2.0 L, 2011 il, 238 183 km', 'price': 19900.0, 'description': None, 'location': 'Bakı', 'brand': 'Kia', 'model': 'Optima', 'year': 2011, 'body_type': 'Sedan', 'color': 'Yaş Asfalt', 'engine_size': 2.0, 'mileage': 238183.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8959956'}
+2024-11-19 15:13:31,304 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:31,304 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:31,304 - sqlalchemy.engine.Engine - INFO - [cached since 46.51s ago] ('8959956', 1, 0)
+2024-11-19 15:13:31,304 - models - INFO - Added new car 8959956
+2024-11-19 15:13:31,304 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:31,304 - sqlalchemy.engine.Engine - INFO - [cached since 46.51s ago] ('8959956', 'Kia Optima, 2.0 L, 2011 il, 238 183 km', 19900.0, 2011, 238183.0, 'Sedan', 'Yaş Asfalt', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Kia', 'Optima', 'Private', None, 'https://turbo.az/autos/8959956', '2024-11-19 13:13:31.304449', '2024-11-19 13:13:31.304454')
+2024-11-19 15:13:31,304 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:31,305 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:31,305 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:31,305 - sqlalchemy.engine.Engine - INFO - [cached since 46.51s ago] (32,)
+2024-11-19 15:13:31,305 - models - INFO - Successfully saved car 8959956 to database
+2024-11-19 15:13:31,305 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:31,305 - __main__ - INFO - Successfully saved car 8959956 to database
+2024-11-19 15:13:32,311 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8960035
+2024-11-19 15:13:32,311 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8960035
+2024-11-19 15:13:32,674 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8960035
+2024-11-19 15:13:32,700 - __main__ - INFO - Extracted car data: {'title': 'Hyundai ix35, 2.0 L, 2010 il, 158 000 km', 'price': 22500.0, 'description': None, 'location': 'Bakı', 'brand': 'Hyundai', 'model': 'ix35', 'year': 2010, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Qara', 'engine_size': 2.0, 'mileage': 158000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8960035'}
+2024-11-19 15:13:32,700 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:32,701 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:32,701 - sqlalchemy.engine.Engine - INFO - [cached since 47.91s ago] ('8960035', 1, 0)
+2024-11-19 15:13:32,701 - models - INFO - Added new car 8960035
+2024-11-19 15:13:32,701 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:32,701 - sqlalchemy.engine.Engine - INFO - [cached since 47.91s ago] ('8960035', 'Hyundai ix35, 2.0 L, 2010 il, 158 000 km', 22500.0, 2010, 158000.0, 'Offroader / SUV, 5 qapı', 'Qara', 2.0, 'Gasoline', 'Avtomat', None, 'Bakı', 'Hyundai', 'ix35', 'Private', None, 'https://turbo.az/autos/8960035', '2024-11-19 13:13:32.701248', '2024-11-19 13:13:32.701252')
+2024-11-19 15:13:32,701 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:32,702 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:32,702 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:32,702 - sqlalchemy.engine.Engine - INFO - [cached since 47.91s ago] (33,)
+2024-11-19 15:13:32,702 - models - INFO - Successfully saved car 8960035 to database
+2024-11-19 15:13:32,702 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:32,702 - __main__ - INFO - Successfully saved car 8960035 to database
+2024-11-19 15:13:33,707 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8944704
+2024-11-19 15:13:33,707 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8944704
+2024-11-19 15:13:34,134 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8944704
+2024-11-19 15:13:34,209 - __main__ - INFO - Extracted car data: {'title': 'Hyundai Elantra, 1.8 L, 2013 il, 230 000 km', 'price': 17500.0, 'description': None, 'location': 'Bakı', 'brand': 'Hyundai', 'model': 'Elantra', 'year': 2013, 'body_type': 'Sedan', 'color': 'Göy', 'engine_size': 1.8, 'mileage': 230000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8944704'}
+2024-11-19 15:13:34,210 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:34,210 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:34,210 - sqlalchemy.engine.Engine - INFO - [cached since 49.42s ago] ('8944704', 1, 0)
+2024-11-19 15:13:34,210 - models - INFO - Added new car 8944704
+2024-11-19 15:13:34,210 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:34,210 - sqlalchemy.engine.Engine - INFO - [cached since 49.42s ago] ('8944704', 'Hyundai Elantra, 1.8 L, 2013 il, 230 000 km', 17500.0, 2013, 230000.0, 'Sedan', 'Göy', 1.8, 'Gasoline', 'Avtomat', None, 'Bakı', 'Hyundai', 'Elantra', 'Private', None, 'https://turbo.az/autos/8944704', '2024-11-19 13:13:34.210588', '2024-11-19 13:13:34.210592')
+2024-11-19 15:13:34,211 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:34,211 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:34,211 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:34,211 - sqlalchemy.engine.Engine - INFO - [cached since 49.42s ago] (34,)
+2024-11-19 15:13:34,211 - models - INFO - Successfully saved car 8944704 to database
+2024-11-19 15:13:34,211 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:34,212 - __main__ - INFO - Successfully saved car 8944704 to database
+2024-11-19 15:13:35,217 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8934572
+2024-11-19 15:13:35,217 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8934572
+2024-11-19 15:13:35,596 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8934572
+2024-11-19 15:13:35,637 - __main__ - INFO - Extracted car data: {'title': 'Mitsubishi Outlander, 2.4 L, 2002 il, 247 321 km', 'price': 10900.0, 'description': None, 'location': 'Sumqayıt', 'brand': 'Mitsubishi', 'model': 'Outlander', 'year': 2002, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Qara', 'engine_size': 2.4, 'mileage': 247321.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8934572'}
+2024-11-19 15:13:35,638 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:35,638 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:35,638 - sqlalchemy.engine.Engine - INFO - [cached since 50.84s ago] ('8934572', 1, 0)
+2024-11-19 15:13:35,638 - models - INFO - Added new car 8934572
+2024-11-19 15:13:35,638 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:35,638 - sqlalchemy.engine.Engine - INFO - [cached since 50.84s ago] ('8934572', 'Mitsubishi Outlander, 2.4 L, 2002 il, 247 321 km', 10900.0, 2002, 247321.0, 'Offroader / SUV, 5 qapı', 'Qara', 2.4, 'Gasoline', 'Avtomat', None, 'Sumqayıt', 'Mitsubishi', 'Outlander', 'Private', None, 'https://turbo.az/autos/8934572', '2024-11-19 13:13:35.638513', '2024-11-19 13:13:35.638518')
+2024-11-19 15:13:35,639 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:35,639 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:35,639 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:35,639 - sqlalchemy.engine.Engine - INFO - [cached since 50.84s ago] (35,)
+2024-11-19 15:13:35,640 - models - INFO - Successfully saved car 8934572 to database
+2024-11-19 15:13:35,640 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:35,640 - __main__ - INFO - Successfully saved car 8934572 to database
+2024-11-19 15:13:36,645 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8889220
+2024-11-19 15:13:36,645 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8889220
+2024-11-19 15:13:37,036 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8889220
+2024-11-19 15:13:37,083 - __main__ - INFO - Extracted car data: {'title': 'Lexus LX 570, 5.7 L, 2010 il, 210 000 km', 'price': 49800.0, 'description': None, 'location': 'Şəmkir', 'brand': 'Lexus', 'model': 'LX 570', 'year': 2010, 'body_type': 'Offroader / SUV, 5 qapı', 'color': 'Qara', 'engine_size': 5.7, 'mileage': 210000.0, 'transmission': 'Avtomat', 'fuel_type': 'Gasoline', 'seller_type': 'Private', 'images': None, 'url': 'https://turbo.az/autos/8889220'}
+2024-11-19 15:13:37,083 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:37,083 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.listing_id = ?
+ LIMIT ? OFFSET ?
+2024-11-19 15:13:37,083 - sqlalchemy.engine.Engine - INFO - [cached since 52.29s ago] ('8889220', 1, 0)
+2024-11-19 15:13:37,083 - models - INFO - Added new car 8889220
+2024-11-19 15:13:37,084 - sqlalchemy.engine.Engine - INFO - INSERT INTO cars (listing_id, title, price, year, mileage, body_type, color, engine_size, fuel_type, transmission, description, location, brand, model, seller_type, images, url, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-11-19 15:13:37,084 - sqlalchemy.engine.Engine - INFO - [cached since 52.29s ago] ('8889220', 'Lexus LX 570, 5.7 L, 2010 il, 210 000 km', 49800.0, 2010, 210000.0, 'Offroader / SUV, 5 qapı', 'Qara', 5.7, 'Gasoline', 'Avtomat', None, 'Şəmkir', 'Lexus', 'LX 570', 'Private', None, 'https://turbo.az/autos/8889220', '2024-11-19 13:13:37.083934', '2024-11-19 13:13:37.083939')
+2024-11-19 15:13:37,084 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-11-19 15:13:37,085 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-11-19 15:13:37,085 - sqlalchemy.engine.Engine - INFO - SELECT cars.id AS cars_id, cars.listing_id AS cars_listing_id, cars.title AS cars_title, cars.price AS cars_price, cars.year AS cars_year, cars.mileage AS cars_mileage, cars.body_type AS cars_body_type, cars.color AS cars_color, cars.engine_size AS cars_engine_size, cars.fuel_type AS cars_fuel_type, cars.transmission AS cars_transmission, cars.description AS cars_description, cars.location AS cars_location, cars.brand AS cars_brand, cars.model AS cars_model, cars.seller_type AS cars_seller_type, cars.images AS cars_images, cars.url AS cars_url, cars.created_at AS cars_created_at, cars.updated_at AS cars_updated_at 
+FROM cars 
+WHERE cars.id = ?
+2024-11-19 15:13:37,085 - sqlalchemy.engine.Engine - INFO - [cached since 52.29s ago] (36,)
+2024-11-19 15:13:37,086 - models - INFO - Successfully saved car 8889220 to database
+2024-11-19 15:13:37,086 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-11-19 15:13:37,086 - __main__ - INFO - Successfully saved car 8889220 to database
+2024-11-19 15:13:38,103 - __main__ - INFO - Saved 36 cars to CSV
+2024-11-19 15:13:38,118 - __main__ - INFO - Scraping completed successfully
