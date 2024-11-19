@@ -5,7 +5,9 @@ import logging.config
 import os
 from time import sleep
 from bs4 import BeautifulSoup
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
+from dataclasses import dataclass, field
+from copy import deepcopy
 
 from config import (
     BASE_URL, REQUEST_HEADERS, REQUEST_TIMEOUT, 
@@ -18,45 +20,68 @@ from config import (
 logging.config.dictConfig(LOGGING_CONFIG)
 logger = logging.getLogger(__name__)
 
-class TurboAzScraper:
-    def __init__(self):
-        """Initialize the TurboAz scraper."""
-        self.base_url = BASE_URL
-        self.headers = REQUEST_HEADERS
-        self.timeout = REQUEST_TIMEOUT
-        self.delay = DELAY_BETWEEN_REQUESTS
-        self.max_retries = MAX_RETRIES
-        self.output_dir = OUTPUT_DIRECTORY
-        self.csv_filename = CSV_FILENAME
-        self.all_cars = []
-        
-        # Create output directory
-        os.makedirs(self.output_dir, exist_ok=True)
+@dataclass
+class ScrapingConfig:
+    """Configuration class for scraping parameters."""
+    base_url: str = BASE_URL
+    headers: Dict[str, str] = field(default_factory=lambda: deepcopy(REQUEST_HEADERS))
+    timeout: int = REQUEST_TIMEOUT
+    delay: int = DELAY_BETWEEN_REQUESTS
+    max_retries: int = MAX_RETRIES
+    output_dir: str = OUTPUT_DIRECTORY
+    csv_filename: str = CSV_FILENAME
 
+class TurboAzScraper:
+    """A web scraper for Turbo.az car listings using class methods to avoid instance state."""
+    
+    def __init__(self):
+        """Initialize the scraper and create output directory."""
+        self.config = ScrapingConfig()
+        os.makedirs(self.config.output_dir, exist_ok=True)
+        self._cars_data: List[Dict[str, Any]] = []
+    
+    @classmethod
+    def create_scraper(cls) -> 'TurboAzScraper':
+        """Factory method to create a scraper instance."""
+        return cls()
+    
     def fetch_page(self, url: str) -> Optional[str]:
-        """Fetch page content with retries."""
-        for attempt in range(self.max_retries):
+        """
+        Fetch page content with retries.
+        
+        Args:
+            url: The URL to fetch
+            
+        Returns:
+            Optional[str]: The page content if successful, None otherwise
+        """
+        for attempt in range(self.config.max_retries):
             try:
                 logger.info(f"Fetching URL: {url}")
                 response = requests.get(
                     url,
-                    headers=self.headers,
-                    timeout=self.timeout
+                    headers=self.config.headers,
+                    timeout=self.config.timeout
                 )
                 response.raise_for_status()
                 logger.info(f"Successfully fetched {url}")
                 return response.text
-            
+                
             except requests.RequestException as e:
-                logger.error(f"Attempt {attempt + 1}/{self.max_retries} failed: {str(e)}")
-                if attempt < self.max_retries - 1:
-                    sleep(self.delay * (attempt + 1))
+                logger.error(f"Attempt {attempt + 1}/{self.config.max_retries} failed: {str(e)}")
+                if attempt < self.config.max_retries - 1:
+                    sleep(self.config.delay * (attempt + 1))
                     continue
-                return None
+        return None
 
     def get_total_pages(self) -> int:
-        """Get the total number of pages available."""
-        html = self.fetch_page(self.base_url)
+        """
+        Get the total number of pages available.
+        
+        Returns:
+            int: Total number of pages, 0 if unable to determine
+        """
+        html = self.fetch_page(self.config.base_url)
         if not html:
             return 0
         
@@ -73,8 +98,16 @@ class TurboAzScraper:
             return 0
 
     def get_listing_ids(self, page_number: int) -> List[str]:
-        """Get all listing IDs from a specific page."""
-        url = f"{self.base_url}?page={page_number}"
+        """
+        Get all listing IDs from a specific page.
+        
+        Args:
+            page_number: The page number to scrape
+            
+        Returns:
+            List[str]: List of listing IDs found on the page
+        """
+        url = f"{self.config.base_url}?page={page_number}"
         html = self.fetch_page(url)
         if not html:
             return []
@@ -95,8 +128,17 @@ class TurboAzScraper:
 
         return listing_ids
 
-    def parse_car_details(self, soup) -> Dict[str, str]:
-        """Parse car details from the properties section."""
+    @staticmethod
+    def parse_car_details(soup: BeautifulSoup) -> Dict[str, str]:
+        """
+        Parse car details from the properties section.
+        
+        Args:
+            soup: BeautifulSoup object of the car listing page
+            
+        Returns:
+            Dict[str, str]: Dictionary of car properties
+        """
         properties = {}
         property_items = soup.find_all(class_=SELECTORS['property_item'].split('.')[-1])
         logger.debug(f"Found {len(property_items)} property items")
@@ -109,8 +151,6 @@ class TurboAzScraper:
                 if name_elem and value_elem:
                     name = name_elem.text.strip()
                     value = value_elem.text.strip()
-                    
-                    # Map Azerbaijani labels to English if available
                     field_name = LABEL_MAPPING.get(name, name)
                     properties[field_name] = value
                     
@@ -119,9 +159,17 @@ class TurboAzScraper:
 
         return properties
 
-    def scrape_listing(self, listing_id: str) -> Dict:
-        """Scrape details from a specific car listing."""
-        url = f"{self.base_url}/{listing_id}"
+    def scrape_listing(self, listing_id: str) -> Dict[str, Any]:
+        """
+        Scrape details from a specific car listing.
+        
+        Args:
+            listing_id: The ID of the listing to scrape
+            
+        Returns:
+            Dict[str, Any]: Dictionary containing the car's details
+        """
+        url = f"{self.config.base_url}/{listing_id}"
         logger.info(f"Scraping specific listing: {url}")
         
         try:
@@ -154,32 +202,33 @@ class TurboAzScraper:
             logger.error(f"Error scraping listing {url}: {str(e)}")
             return {}
 
-    def display_data_summary(self, df: pd.DataFrame) -> None:
-        """Display a summary of the collected data."""
+    @staticmethod
+    def display_data_summary(df: pd.DataFrame) -> None:
+        """
+        Display a summary of the collected data.
+        
+        Args:
+            df: DataFrame containing the scraped car data
+        """
         print("\n" + "="*50)
         print("SCRAPING RESULTS SUMMARY")
         print("="*50)
         
-        # Basic statistics
         print(f"\nTotal cars collected: {len(df)}")
         
         if not df.empty:
-            # Brand distribution
             if 'brand' in df.columns:
                 print("\nTop 5 Brands:")
                 print(df['brand'].value_counts().head())
             
-            # Price statistics
             if 'price' in df.columns:
                 print("\nPrice Statistics:")
                 print(df['price'].describe())
             
-            # Year distribution
             if 'year' in df.columns:
                 print("\nYear Distribution:")
                 print(df['year'].value_counts().sort_index().head())
             
-            # Sample entries
             print("\nSample Entries (5 random cars):")
             sample_columns = ['brand', 'model', 'year', 'price', 'mileage']
             available_columns = [col for col in sample_columns if col in df.columns]
@@ -187,67 +236,61 @@ class TurboAzScraper:
         
         print("\n" + "="*50)
 
-    def save_progress(self) -> None:
-        """Save current progress to CSV file."""
-        df = pd.DataFrame(self.all_cars)
-        df.to_csv(os.path.join(self.output_dir, self.csv_filename), index=False)
-        logger.info(f"Saved {len(self.all_cars)} cars to CSV")
+    def save_data(self) -> None:
+        """Save scraped data to CSV file and display summary."""
+        df = pd.DataFrame(self._cars_data)
+        output_path = os.path.join(self.config.output_dir, self.config.csv_filename)
+        df.to_csv(output_path, index=False)
+        logger.info(f"Saved {len(self._cars_data)} cars to {output_path}")
+        self.display_data_summary(df)
 
     def run(self, max_pages: Optional[int] = None) -> None:
-        """Run the scraper."""
+        """
+        Run the scraper.
+        
+        Args:
+            max_pages: Optional maximum number of pages to scrape
+        """
         try:
             logger.info("Starting the car scraper")
             
-            # Get total pages
             total_pages = self.get_total_pages()
-            logger.info(f"Total pages to scrape: {total_pages}")
-            
-            if total_pages == 0:
-                logger.error("Could not determine total pages. Exiting.")
-                return
+            if max_pages:
+                total_pages = min(total_pages, max_pages)
                 
-            # Set the maximum pages to scrape
-            max_pages = min(total_pages, max_pages or DEFAULT_MAX_PAGES or total_pages)
+            logger.info(f"Will scrape {total_pages} pages")
             
-            # Iterate through pages
-            for page in range(1, max_pages + 1):
-                logger.info(f"Processing page {page}/{max_pages}")
-                
-                # Get listing IDs from the current page
+            for page in range(1, total_pages + 1):
+                logger.info(f"Processing page {page}/{total_pages}")
                 listing_ids = self.get_listing_ids(page)
                 
-                # Process each listing
                 for listing_id in listing_ids:
-                    car_details = self.scrape_listing(listing_id)
-                    
-                    if car_details:
-                        car_details['listing_id'] = listing_id
-                        car_details['page_number'] = page
-                        self.all_cars.append(car_details)
-                        
-                        # Show real-time progress
-                        print(f"\rCars collected: {len(self.all_cars)}", end="")
-                    
-                    # Respect rate limiting
-                    sleep(self.delay)
+                    car_data = self.scrape_listing(listing_id)
+                    if car_data:
+                        self._cars_data.append(car_data)
+                        logger.info(f"Total cars collected: {len(self._cars_data)}")
+                    sleep(self.config.delay)
                 
                 # Save progress after each page
-                self.save_progress()
-            
-            # Load the final dataset and display summary
-            final_df = pd.read_csv(os.path.join(self.output_dir, self.csv_filename))
-            self.display_data_summary(final_df)
-            
+                if self._cars_data:
+                    self.save_data()
+                    
             logger.info("Scraping completed successfully")
             
+        except KeyboardInterrupt:
+            logger.info("Scraping interrupted by user")
+            if self._cars_data:
+                self.save_data()
         except Exception as e:
-            logger.critical(f"Unexpected error in main process: {str(e)}")
+            logger.critical(f"Unexpected error: {str(e)}")
+            if self._cars_data:
+                self.save_data()
             raise
 
 def main():
-    """Main entry point."""
-    scraper = TurboAzScraper()
-    scraper.run()
+    """Entry point of the script."""
+    scraper = TurboAzScraper.create_scraper()
+    scraper.run(max_pages=DEFAULT_MAX_PAGES)
 
 if __name__ == '__main__':
     main()

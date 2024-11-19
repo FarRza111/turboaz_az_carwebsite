@@ -1964,3 +1964,278 @@
 2024-11-19 12:15:36,879 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8844241
 2024-11-19 12:15:37,934 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8958176
 2024-11-19 12:15:37,935 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8958176
+2024-11-19 12:18:26,368 - __main__ - INFO - Starting the car scraper
+2024-11-19 12:18:26,368 - __main__ - INFO - Fetching URL: https://turbo.az/autos
+2024-11-19 12:18:27,221 - __main__ - INFO - Successfully fetched https://turbo.az/autos
+2024-11-19 12:18:27,278 - __main__ - INFO - Total pages to scrape: 1
+2024-11-19 12:18:27,278 - __main__ - INFO - Processing page 1/1
+2024-11-19 12:18:27,278 - __main__ - INFO - Fetching URL: https://turbo.az/autos?page=1
+2024-11-19 12:18:28,139 - __main__ - INFO - Successfully fetched https://turbo.az/autos?page=1
+2024-11-19 12:18:28,216 - __main__ - INFO - Found 36 product links
+2024-11-19 12:18:28,216 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8925584
+2024-11-19 12:18:28,216 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8925584
+2024-11-19 12:18:28,578 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8925584
+2024-11-19 12:18:29,647 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8694562
+2024-11-19 12:18:29,648 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8694562
+2024-11-19 12:18:30,183 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8694562
+2024-11-19 12:18:31,214 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8814951
+2024-11-19 12:18:31,214 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8814951
+2024-11-19 12:18:31,659 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8814951
+2024-11-19 12:18:32,693 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8954765
+2024-11-19 12:18:32,693 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8954765
+2024-11-19 12:18:33,139 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8954765
+2024-11-19 12:18:34,177 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8659476
+2024-11-19 12:18:34,177 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8659476
+2024-11-19 12:18:34,567 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8659476
+2024-11-19 12:18:35,610 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8942478
+2024-11-19 12:18:35,611 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8942478
+2024-11-19 12:18:36,131 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8942478
+2024-11-19 12:18:37,177 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8930357
+2024-11-19 12:18:37,177 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8930357
+2024-11-19 12:18:37,573 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8930357
+2024-11-19 12:18:38,615 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8085854
+2024-11-19 12:18:38,616 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8085854
+2024-11-19 12:18:39,092 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8085854
+2024-11-19 12:18:40,127 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8901214
+2024-11-19 12:18:40,128 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8901214
+2024-11-19 12:18:40,537 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8901214
+2024-11-19 12:18:41,582 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8946082
+2024-11-19 12:18:41,582 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8946082
+2024-11-19 12:18:42,093 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8946082
+2024-11-19 12:18:43,152 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8704252
+2024-11-19 12:18:43,152 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8704252
+2024-11-19 12:18:43,654 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8704252
+2024-11-19 12:18:44,694 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8878210
+2024-11-19 12:18:44,694 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8878210
+2024-11-19 12:18:45,136 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8878210
+2024-11-19 12:18:46,181 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8686291
+2024-11-19 12:18:46,181 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8686291
+2024-11-19 12:18:46,560 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8686291
+2024-11-19 12:18:47,604 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959366
+2024-11-19 12:18:47,604 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959366
+2024-11-19 12:18:48,075 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959366
+2024-11-19 12:18:49,099 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8789959
+2024-11-19 12:18:49,100 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8789959
+2024-11-19 12:18:49,459 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8789959
+2024-11-19 12:18:50,503 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959368
+2024-11-19 12:18:50,503 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959368
+2024-11-19 12:18:50,972 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959368
+2024-11-19 12:18:52,013 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8760734
+2024-11-19 12:18:52,014 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8760734
+2024-11-19 12:18:52,391 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8760734
+2024-11-19 12:18:53,422 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8776230
+2024-11-19 12:18:53,422 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8776230
+2024-11-19 12:18:53,941 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8776230
+2024-11-19 12:18:54,979 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8485036
+2024-11-19 12:18:54,980 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8485036
+2024-11-19 12:18:55,380 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8485036
+2024-11-19 12:18:56,427 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8950417
+2024-11-19 12:18:56,427 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8950417
+2024-11-19 12:18:56,840 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8950417
+2024-11-19 12:18:57,915 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8832155
+2024-11-19 12:18:57,915 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8832155
+2024-11-19 12:18:58,303 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8832155
+2024-11-19 12:18:59,343 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8943308
+2024-11-19 12:18:59,343 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8943308
+2024-11-19 12:18:59,899 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8943308
+2024-11-19 12:19:00,942 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8858060
+2024-11-19 12:19:00,943 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8858060
+2024-11-19 12:19:01,319 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8858060
+2024-11-19 12:19:02,364 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8937059
+2024-11-19 12:19:02,365 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8937059
+2024-11-19 12:19:02,764 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8937059
+2024-11-19 12:19:03,810 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959365
+2024-11-19 12:19:03,811 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959365
+2024-11-19 12:19:04,223 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959365
+2024-11-19 12:19:05,266 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8875812
+2024-11-19 12:19:05,266 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8875812
+2024-11-19 12:19:05,635 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8875812
+2024-11-19 12:19:06,681 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8762659
+2024-11-19 12:19:06,681 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8762659
+2024-11-19 12:19:07,085 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8762659
+2024-11-19 12:19:08,122 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8930516
+2024-11-19 12:19:08,123 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8930516
+2024-11-19 12:19:08,483 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8930516
+2024-11-19 12:19:09,524 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8265094
+2024-11-19 12:19:09,524 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8265094
+2024-11-19 12:19:09,961 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8265094
+2024-11-19 12:19:11,011 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959373
+2024-11-19 12:19:11,011 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959373
+2024-11-19 12:19:11,385 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959373
+2024-11-19 12:19:12,430 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8914090
+2024-11-19 12:19:12,430 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8914090
+2024-11-19 12:19:12,860 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8914090
+2024-11-19 12:19:13,904 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8914984
+2024-11-19 12:19:13,905 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8914984
+2024-11-19 12:19:14,286 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8914984
+2024-11-19 12:19:15,321 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959362
+2024-11-19 12:19:15,322 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959362
+2024-11-19 12:19:15,854 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959362
+2024-11-19 12:19:16,894 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8916745
+2024-11-19 12:19:16,894 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8916745
+2024-11-19 12:19:17,307 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8916745
+2024-11-19 12:19:18,334 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959369
+2024-11-19 12:19:18,335 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959369
+2024-11-19 12:19:18,729 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959369
+2024-11-19 12:19:19,773 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8958762
+2024-11-19 12:19:19,774 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8958762
+2024-11-19 12:19:20,171 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8958762
+2024-11-19 12:19:21,220 - __main__ - INFO - Saved 36 cars to CSV
+2024-11-19 12:19:21,235 - __main__ - INFO - Scraping completed successfully
+2024-11-19 12:36:47,870 - __main__ - INFO - Starting the car scraper
+2024-11-19 12:36:47,871 - __main__ - INFO - Fetching URL: https://turbo.az/autos
+2024-11-19 12:36:47,871 - __main__ - CRITICAL - Unexpected error: type object 'ScrapingConfig' has no attribute 'headers'
+2024-11-19 12:38:28,871 - __main__ - INFO - Starting the car scraper
+2024-11-19 12:38:28,871 - __main__ - INFO - Fetching URL: https://turbo.az/autos
+2024-11-19 12:38:29,913 - __main__ - INFO - Successfully fetched https://turbo.az/autos
+2024-11-19 12:38:29,969 - __main__ - INFO - Will scrape 1 pages
+2024-11-19 12:38:29,969 - __main__ - INFO - Processing page 1/1
+2024-11-19 12:38:29,969 - __main__ - INFO - Fetching URL: https://turbo.az/autos?page=1
+2024-11-19 12:38:30,731 - __main__ - INFO - Successfully fetched https://turbo.az/autos?page=1
+2024-11-19 12:38:30,808 - __main__ - INFO - Found 36 product links
+2024-11-19 12:38:30,808 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8908144
+2024-11-19 12:38:30,808 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8908144
+2024-11-19 12:38:31,276 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8908144
+2024-11-19 12:38:31,337 - __main__ - INFO - Total cars collected: 1
+2024-11-19 12:38:32,342 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8821601
+2024-11-19 12:38:32,342 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8821601
+2024-11-19 12:38:32,878 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8821601
+2024-11-19 12:38:32,921 - __main__ - INFO - Total cars collected: 2
+2024-11-19 12:38:33,926 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8918165
+2024-11-19 12:38:33,926 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8918165
+2024-11-19 12:38:34,518 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8918165
+2024-11-19 12:38:34,547 - __main__ - INFO - Total cars collected: 3
+2024-11-19 12:38:35,552 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8850063
+2024-11-19 12:38:35,553 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8850063
+2024-11-19 12:38:36,003 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8850063
+2024-11-19 12:38:36,038 - __main__ - INFO - Total cars collected: 4
+2024-11-19 12:38:37,039 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8878747
+2024-11-19 12:38:37,039 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8878747
+2024-11-19 12:38:37,424 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8878747
+2024-11-19 12:38:37,463 - __main__ - INFO - Total cars collected: 5
+2024-11-19 12:38:38,468 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8776230
+2024-11-19 12:38:38,468 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8776230
+2024-11-19 12:38:38,863 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8776230
+2024-11-19 12:38:38,904 - __main__ - INFO - Total cars collected: 6
+2024-11-19 12:38:39,909 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8950963
+2024-11-19 12:38:39,910 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8950963
+2024-11-19 12:38:40,355 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8950963
+2024-11-19 12:38:40,396 - __main__ - INFO - Total cars collected: 7
+2024-11-19 12:38:41,401 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8619089
+2024-11-19 12:38:41,401 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8619089
+2024-11-19 12:38:41,777 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8619089
+2024-11-19 12:38:41,818 - __main__ - INFO - Total cars collected: 8
+2024-11-19 12:38:42,823 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8949094
+2024-11-19 12:38:42,823 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8949094
+2024-11-19 12:38:43,220 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8949094
+2024-11-19 12:38:43,261 - __main__ - INFO - Total cars collected: 9
+2024-11-19 12:38:44,266 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8945927
+2024-11-19 12:38:44,266 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8945927
+2024-11-19 12:38:44,638 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8945927
+2024-11-19 12:38:44,697 - __main__ - INFO - Total cars collected: 10
+2024-11-19 12:38:45,702 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8663934
+2024-11-19 12:38:45,702 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8663934
+2024-11-19 12:38:46,152 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8663934
+2024-11-19 12:38:46,192 - __main__ - INFO - Total cars collected: 11
+2024-11-19 12:38:47,197 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8914733
+2024-11-19 12:38:47,198 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8914733
+2024-11-19 12:38:47,592 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8914733
+2024-11-19 12:38:47,627 - __main__ - INFO - Total cars collected: 12
+2024-11-19 12:38:48,634 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8709644
+2024-11-19 12:38:48,634 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8709644
+2024-11-19 12:38:49,030 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8709644
+2024-11-19 12:38:49,050 - __main__ - INFO - Total cars collected: 13
+2024-11-19 12:38:50,055 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8853384
+2024-11-19 12:38:50,055 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8853384
+2024-11-19 12:38:50,451 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8853384
+2024-11-19 12:38:50,492 - __main__ - INFO - Total cars collected: 14
+2024-11-19 12:38:51,497 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8955800
+2024-11-19 12:38:51,498 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8955800
+2024-11-19 12:38:51,943 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8955800
+2024-11-19 12:38:51,981 - __main__ - INFO - Total cars collected: 15
+2024-11-19 12:38:52,986 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959441
+2024-11-19 12:38:52,986 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959441
+2024-11-19 12:38:53,432 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959441
+2024-11-19 12:38:53,468 - __main__ - INFO - Total cars collected: 16
+2024-11-19 12:38:54,473 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959439
+2024-11-19 12:38:54,474 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959439
+2024-11-19 12:38:54,842 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959439
+2024-11-19 12:38:54,880 - __main__ - INFO - Total cars collected: 17
+2024-11-19 12:38:55,885 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8928366
+2024-11-19 12:38:55,885 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8928366
+2024-11-19 12:38:56,330 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8928366
+2024-11-19 12:38:56,368 - __main__ - INFO - Total cars collected: 18
+2024-11-19 12:38:57,373 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8934626
+2024-11-19 12:38:57,373 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8934626
+2024-11-19 12:38:57,738 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8934626
+2024-11-19 12:38:57,777 - __main__ - INFO - Total cars collected: 19
+2024-11-19 12:38:58,781 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959437
+2024-11-19 12:38:58,781 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959437
+2024-11-19 12:38:59,179 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959437
+2024-11-19 12:38:59,241 - __main__ - INFO - Total cars collected: 20
+2024-11-19 12:39:00,246 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8897274
+2024-11-19 12:39:00,247 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8897274
+2024-11-19 12:39:00,659 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8897274
+2024-11-19 12:39:00,694 - __main__ - INFO - Total cars collected: 21
+2024-11-19 12:39:01,699 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8911472
+2024-11-19 12:39:01,699 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8911472
+2024-11-19 12:39:02,112 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8911472
+2024-11-19 12:39:02,147 - __main__ - INFO - Total cars collected: 22
+2024-11-19 12:39:03,153 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8932256
+2024-11-19 12:39:03,153 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8932256
+2024-11-19 12:39:03,542 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8932256
+2024-11-19 12:39:03,581 - __main__ - INFO - Total cars collected: 23
+2024-11-19 12:39:04,586 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/7394309
+2024-11-19 12:39:04,587 - __main__ - INFO - Fetching URL: https://turbo.az/autos/7394309
+2024-11-19 12:39:05,028 - __main__ - INFO - Successfully fetched https://turbo.az/autos/7394309
+2024-11-19 12:39:05,067 - __main__ - INFO - Total cars collected: 24
+2024-11-19 12:39:06,072 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959436
+2024-11-19 12:39:06,072 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959436
+2024-11-19 12:39:06,539 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959436
+2024-11-19 12:39:06,579 - __main__ - INFO - Total cars collected: 25
+2024-11-19 12:39:07,584 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959435
+2024-11-19 12:39:07,584 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959435
+2024-11-19 12:39:08,003 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959435
+2024-11-19 12:39:08,039 - __main__ - INFO - Total cars collected: 26
+2024-11-19 12:39:09,043 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959434
+2024-11-19 12:39:09,043 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959434
+2024-11-19 12:39:09,492 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959434
+2024-11-19 12:39:09,532 - __main__ - INFO - Total cars collected: 27
+2024-11-19 12:39:10,537 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8506080
+2024-11-19 12:39:10,537 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8506080
+2024-11-19 12:39:10,923 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8506080
+2024-11-19 12:39:10,949 - __main__ - INFO - Total cars collected: 28
+2024-11-19 12:39:11,954 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8916349
+2024-11-19 12:39:11,955 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8916349
+2024-11-19 12:39:12,408 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8916349
+2024-11-19 12:39:12,445 - __main__ - INFO - Total cars collected: 29
+2024-11-19 12:39:13,450 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/7264468
+2024-11-19 12:39:13,450 - __main__ - INFO - Fetching URL: https://turbo.az/autos/7264468
+2024-11-19 12:39:13,800 - __main__ - INFO - Successfully fetched https://turbo.az/autos/7264468
+2024-11-19 12:39:13,870 - __main__ - INFO - Total cars collected: 30
+2024-11-19 12:39:14,875 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959431
+2024-11-19 12:39:14,876 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959431
+2024-11-19 12:39:15,260 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959431
+2024-11-19 12:39:15,297 - __main__ - INFO - Total cars collected: 31
+2024-11-19 12:39:16,302 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8928482
+2024-11-19 12:39:16,303 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8928482
+2024-11-19 12:39:16,687 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8928482
+2024-11-19 12:39:16,723 - __main__ - INFO - Total cars collected: 32
+2024-11-19 12:39:17,728 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959433
+2024-11-19 12:39:17,728 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959433
+2024-11-19 12:39:18,119 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959433
+2024-11-19 12:39:18,158 - __main__ - INFO - Total cars collected: 33
+2024-11-19 12:39:19,163 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8800196
+2024-11-19 12:39:19,163 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8800196
+2024-11-19 12:39:19,532 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8800196
+2024-11-19 12:39:19,550 - __main__ - INFO - Total cars collected: 34
+2024-11-19 12:39:20,555 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/7003473
+2024-11-19 12:39:20,556 - __main__ - INFO - Fetching URL: https://turbo.az/autos/7003473
+2024-11-19 12:39:20,954 - __main__ - INFO - Successfully fetched https://turbo.az/autos/7003473
+2024-11-19 12:39:20,993 - __main__ - INFO - Total cars collected: 35
+2024-11-19 12:39:21,998 - __main__ - INFO - Scraping specific listing: https://turbo.az/autos/8959429
+2024-11-19 12:39:21,999 - __main__ - INFO - Fetching URL: https://turbo.az/autos/8959429
+2024-11-19 12:39:22,441 - __main__ - INFO - Successfully fetched https://turbo.az/autos/8959429
+2024-11-19 12:39:22,479 - __main__ - INFO - Total cars collected: 36
+2024-11-19 12:39:23,495 - __main__ - INFO - Saved 36 cars to data/turbo_az_listings.csv
+2024-11-19 12:39:23,509 - __main__ - INFO - Scraping completed successfully
