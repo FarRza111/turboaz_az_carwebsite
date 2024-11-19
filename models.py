@@ -5,14 +5,22 @@ from datetime import datetime
 from typing import Optional
 import os
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Get database URL from environment variable or use default SQLite database
 DATABASE_URL = os.getenv('DATABASE_URL', 'sqlite:///./data/cars.db')
 
+# Ensure data directory exists
+os.makedirs('./data', exist_ok=True)
+
 # Create SQLAlchemy engine
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, echo=True)  # Added echo=True for debugging
 
 # Create declarative base
 Base = declarative_base()
@@ -37,6 +45,8 @@ class Car(Base):
     transmission = Column(String)
     description = Column(Text)
     location = Column(String)
+    brand = Column(String)  # Added missing columns
+    model = Column(String)  # Added missing columns
     seller_type = Column(String)
     images = Column(Text)  # Store as JSON string
     url = Column(String)
@@ -44,8 +54,16 @@ class Car(Base):
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
 def init_db():
-    """Initialize the database, creating all tables"""
-    Base.metadata.create_all(bind=engine)
+    """Initialize database and create tables."""
+    try:
+        # Drop all tables first to ensure clean state
+        Base.metadata.drop_all(bind=engine)
+        # Create all tables
+        Base.metadata.create_all(bind=engine)
+        logger.info("Database initialized successfully")
+    except Exception as e:
+        logger.error(f"Error initializing database: {str(e)}")
+        raise
 
 def get_db():
     """Get database session"""
@@ -55,38 +73,33 @@ def get_db():
     finally:
         db.close()
 
-def save_car_to_db(car_data: dict, db_session) -> Optional[Car]:
-    """Save car data to database"""
+def save_car_to_db(car: Car) -> None:
+    """Save a car instance to the database."""
+    session = SessionLocal()
     try:
-        # Convert price to float
-        price_str = car_data.get('price', '0').replace('$', '').replace(',', '').strip()
-        price = float(price_str) if price_str.replace('.', '').isdigit() else 0.0
-
-        # Create new car instance
-        car = Car(
-            listing_id=car_data.get('listing_id'),
-            title=car_data.get('title'),
-            price=price,
-            year=car_data.get('year'),
-            mileage=float(car_data.get('mileage', 0)),
-            body_type=car_data.get('body_type'),
-            color=car_data.get('color'),
-            engine_size=float(car_data.get('engine_size', 0)),
-            fuel_type=car_data.get('fuel_type'),
-            transmission=car_data.get('transmission'),
-            description=car_data.get('description'),
-            location=car_data.get('location'),
-            seller_type=car_data.get('seller_type'),
-            images=str(car_data.get('images', [])),
-            url=car_data.get('url')
-        )
-
-        # Add to session and commit
-        db_session.add(car)
-        db_session.commit()
-        db_session.refresh(car)
-        return car
+        # Check if car already exists
+        existing_car = session.query(Car).filter_by(listing_id=car.listing_id).first()
+        
+        if existing_car:
+            # Update existing car
+            for key, value in car.__dict__.items():
+                if not key.startswith('_'):
+                    setattr(existing_car, key, value)
+            existing_car.updated_at = datetime.utcnow()
+            logger.info(f"Updated existing car {car.listing_id}")
+        else:
+            # Add new car
+            car.created_at = datetime.utcnow()
+            car.updated_at = datetime.utcnow()
+            session.add(car)
+            logger.info(f"Added new car {car.listing_id}")
+        
+        session.commit()
+        logger.info(f"Successfully saved car {car.listing_id} to database")
+        
     except Exception as e:
-        db_session.rollback()
-        print(f"Error saving car to database: {str(e)}")
-        return None
+        logger.error(f"Error saving car to database: {str(e)}")
+        session.rollback()
+        raise
+    finally:
+        session.close()

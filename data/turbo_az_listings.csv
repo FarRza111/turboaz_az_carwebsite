@@ -1,37 +1,37 @@
-title,price,description,city,brand,model,year,body_type,color,engine,mileage,Sürətlər qutusu,Ötürücü,Yeni,Vəziyyəti,Yerlərin sayı,Sahiblər,Hansı bazar üçün yığılıb
-"Land Rover Range Rover, 3.0 L, 2023 il, 12 500 km",194 000 USD,,Bakı,Land Rover,Range Rover,2023,"Offroader / SUV, 5 qapı",Qara,3.0 L / 400 a.g. / Benzin,12 500 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",,,
-"Toyota Camry, 2.0 L, 2024 il, yeni",38 400 USD,,Bakı,Toyota,Camry,2024,Sedan,Ağ,2.0 L / 200 a.g. / Hibrid,0 km,Variator,Ön,Bəli,"Vuruğu yoxdur, rənglənməyib",5,1,Avropa
-"Toyota Corolla, 1.6 L, 2020 il, 59 700 km",35 000 AZN,,Bakı,Toyota,Corolla,2020,Sedan,Qara,1.6 L / 124 a.g. / Benzin,59 700 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,0,Avropa
-"XPeng G6, 2024 il, yeni",39 900 USD,,Bakı,XPeng,G6,2024,"Offroader / SUV, 5 qapı",Qara,476 a.g. / Elektro,0 km,Reduktor,Tam,Bəli,"Vuruğu yoxdur, rənglənməyib",,1,Avropa
-"Chevrolet Equinox, 1.5 L, 2021 il, 205 000 km",22 500 AZN,,Gəncə,Chevrolet,Equinox,2021,"Offroader / SUV, 5 qapı",Gümüşü,1.5 L / 170 a.g. / Benzin,205 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Amerika
-"Jeep Wrangler, 2.0 L, 2021 il, 45 000 km",52 000 USD,,Bakı,Jeep,Wrangler,2021,"Offroader / SUV, 5 qapı",Yaş Asfalt,2.0 L / 272 a.g. / Plug-in Hibrid,45 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
-"Renault Tondar, 1.6 L, 2013 il, 323 000 km",6 300 AZN,,Neftçala,Renault,Tondar,2013,Sedan,Qara,1.6 L / 76 a.g. / Benzin,323 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənib",4,3,
-"Mercedes E 300 4MATIC, 2.0 L, 2017 il, 70 000 km",34 500 USD,,Bakı,Mercedes,E 300 4MATIC,2017,Sedan,Göy,2.0 L / 245 a.g. / Benzin,70 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",4,1,
-"Hyundai Sonata, 2.0 L, 2010 il, 270 000 km",18 500 AZN,,Bakı,Hyundai,Sonata,2010,Sedan,Boz,2.0 L / 165 a.g. / Benzin,270 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",4,2,Koreya
-"Jeep Grand Cherokee, 2.0 L, 2022 il, 7 041 km",57 500 USD,,Bakı,Jeep,Grand Cherokee,2022,"Offroader / SUV, 5 qapı",Boz,2.0 L / 375 a.g. / Plug-in Hibrid,7 041 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
-"Kia Stinger, 2.0 L, 2018 il, 72 420 km",21 300 USD,,Bakı,Kia,Stinger,2018,Liftbek,Ağ,2.0 L / 247 a.g. / Benzin,72 420 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
-"Kia Sorento, 2.0 L, 2019 il, 147 000 km",44 300 AZN,,Bakı,Kia,Sorento,2019,"Offroader / SUV, 5 qapı",Yaş Asfalt,2.0 L / 184 a.g. / Dizel,147 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Koreya
-"Mercedes E 220, 2.2 L, 1994 il, 514 000 km",8 900 AZN,,Bakı,Mercedes,E 220,1994,Sedan,Gümüşü,2.2 L / 150 a.g. / Benzin,514 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənib",5,0,Avropa
-"Land Rover Range Rover, 3.0 L, 2015 il, 166 700 km",37 900 USD,,Bakı,Land Rover,Range Rover,2015,"Offroader / SUV, 5 qapı",Ağ,3.0 L / 340 a.g. / Benzin,166 700 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
-"Mercedes C 300, 2.0 L, 2015 il, 125 000 km",24 500 USD,,Bakı,Mercedes,C 300,2015,Sedan,Boz,2.0 L / 245 a.g. / Benzin,125 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Amerika
-"Ford Fusion (North America), 1.5 L, 2014 il, 120 000 km",18 000 AZN,,Bakı,Ford,Fusion (North America),2014,Sedan,Ağ,1.5 L / 181 a.g. / Benzin,120 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Amerika
-"Jeep Grand Cherokee, 3.6 L, 2014 il, 179 555 km",46 900 AZN,,Bakı,Jeep,Grand Cherokee,2014,"Offroader / SUV, 5 qapı",Qara,3.6 L / 286 a.g. / Benzin,179 555 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Avropa
-"Kia Ceed, 1.6 L, 2008 il, 383 000 km",13 000 AZN,,Bakı,Kia,Ceed,2008,"Universal, 5 qapı",Boz,1.6 L / 115 a.g. / Dizel,383 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Koreya
-"Audi A4, 1.8 L, 2008 il, 316 000 km",13 000 AZN,,Bakı,Audi,A4,2008,Sedan,Ağ,1.8 L / 160 a.g. / Benzin,316 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Avropa
-"Subaru Impreza, 2.0 L, 2008 il, 365 400 km",9 000 AZN,,Xaçmaz,Subaru,Impreza,2008,"Hetçbek, 5 qapı",Boz,2.0 L / 150 a.g. / Benzin,365 400 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənib",4,2,Yaponiya
-"Mercedes E 320, 3.0 L, 2007 il, 299 123 km",19 850 AZN,,Bakı,Mercedes,E 320,2007,Sedan,Qara,3.0 L / 224 a.g. / Dizel,299 123 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",,0,
-"Ford Transit, 2.5 L, 1997 il, 570 000 km",24 000 AZN,,Bakı,Ford,Transit,1997,Yük maşını,Ağ,2.5 L / 76 a.g. / Dizel,570 000 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",3,1,Avropa
-"Mercedes Vito 111, 2.2 L, 2009 il, 352 420 km",30 500 AZN,,Bakı,Mercedes,Vito 111,2009,Minivan,Ağ,2.2 L / 150 a.g. / Dizel,352 420 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",8+,1,
-"GAZ 330202-740, 2.7 L, 2023 il, yeni",28 500 AZN,,Bakı,GAZ,330202-740,2023,Yük maşını,Ağ,2.7 L / 106 a.g. / Benzin,0 km,Mexaniki,Arxa,Bəli,"Vuruğu yoxdur, rənglənməyib",,,Rusiya
-"Mercedes C 240, 2.4 L, 1997 il, 323 000 km",12 500 AZN,,Bakı,Mercedes,C 240,1997,Sedan,Boz,2.4 L / 170 a.g. / Benzin,323 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,3,Avropa
-"LADA (VAZ) 2106, 1.5 L, 1987 il, 21 837 km",2 500 AZN,,Bakı,LADA (VAZ),2106,1987,Sedan,Bənövşəyi,1.5 L / 65 a.g. / Benzin,21 837 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",,,
-"Hyundai Elantra, 1.8 L, 2013 il, 179 000 km",18 900 AZN,,Bakı,Hyundai,Elantra,2013,Sedan,Gümüşü,1.8 L / 150 a.g. / Benzin,179 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",,2,
-"Mercedes Vito 111, 2.2 L, 2009 il, 309 000 km",19 300 AZN,,Bakı,Mercedes,Vito 111,2009,Furqon,Ağ,2.2 L / 140 a.g. / Dizel,309 000 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",,0,
-"Kia Rio, 1.5 L, 2008 il, 298 000 km",9 700 AZN,,Bakı,Kia,Rio,2008,"Hetçbek, 5 qapı",Qırmızı,1.5 L / 110 a.g. / Dizel,298 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",,0,
-"GAZ Next A31R22, 2.8 L, 2023 il, yeni",45 500 AZN,,Bakı,GAZ,Next A31R22,2023,Furqon,Ağ,2.8 L / 149 a.g. / Dizel,0 km,Mexaniki,Arxa,Bəli,"Vuruğu yoxdur, rənglənməyib",,,
-"Chevrolet Captiva, 2.2 L, 2011 il, 167 914 km",23 500 AZN,,Şəki,Chevrolet,Captiva,2011,"Offroader / SUV, 5 qapı",Ağ,2.2 L / 184 a.g. / Dizel,167 914 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",7,2,Koreya
-"Lexus RX 350, 3.5 L, 2006 il, 340 000 km",17 900 AZN,,Bakı,Lexus,RX 350,2006,"Offroader / SUV, 5 qapı",Ağ,3.5 L / 270 a.g. / Benzin,340 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Rəsmi diler
-"Kia Rio, 1.5 L, 2005 il, 257 000 km",12 300 AZN,,Xırdalan,Kia,Rio,2005,"Hetçbek, 5 qapı",Qırmızı,1.5 L / 110 a.g. / Dizel,257 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Digər
-"Kia K7, 2.5 L, 2019 il, 45 000 km",25 000 USD,,Bakı,Kia,K7,2019,Sedan,Yaş Asfalt,2.5 L / 198 a.g. / Benzin,45 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Avropa
-"GAZ Next A21R22-30, 2.8 L, 2023 il, yeni",38 000 AZN,,Bakı,GAZ,Next A21R22-30,2023,Yük maşını,Ağ,2.8 L / 150 a.g. / Dizel,0 km,Mexaniki,Arxa,Bəli,"Vuruğu yoxdur, rənglənməyib",,,
-"LADA (VAZ) 21011, 1.3 L, 1981 il, 25 555 km",3 000 AZN,,Zaqatala,LADA (VAZ),21011,1981,Sedan,Qırmızı,1.3 L / 65 a.g. / Benzin,25 555 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",4,,Rusiya
+title,price,description,location,brand,model,year,body_type,color,engine_size,mileage,transmission,fuel_type,seller_type,images,url,listing_id
+"Lincoln Aviator, 3.0 L, 2021 il, 11 000 km",68500.0,,Bakı,Lincoln,Aviator,2021,"Offroader / SUV, 5 qapı",Qara,3.0,11000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8937090,8937090
+"Kia Sportage, 2.0 L, 2024 il, yeni",65900.0,,Sumqayıt,Kia,Sportage,2024,"Offroader / SUV, 5 qapı",Yaşıl,2.0,0.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8550660,8550660
+"Changan Qiyuan Q05, 1.5 L, 2024 il, yeni",20200.0,,Bakı,Changan,Qiyuan Q05,2024,"Offroader / SUV, 5 qapı",Ağ,1.5,0.0,Avtomat,Hybrid,Private,,https://turbo.az/autos/8573182,8573182
+"Toyota Frontlander, 2.0 L, 2024 il, yeni",40800.0,,Bakı,Toyota,Frontlander,2024,"Offroader / SUV, 5 qapı",Qara,2.0,0.0,Variator,Hybrid,Private,,https://turbo.az/autos/8870837,8870837
+"Changan Uni-T, 1.5 L, 2022 il, 38 000 km",46600.0,,Bakı,Changan,Uni-T,2022,Liftbek,Boz,1.5,38000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8923028,8923028
+"Hyundai Elantra, 2.0 L, 2017 il, 128 162 km",24500.0,,Bakı,Hyundai,Elantra,2017,Sedan,Boz,2.0,128162.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8930879,8930879
+"BMW 528, 2.0 L, 2012 il, 220 000 km",26800.0,,Bakı,BMW,528,2012,Sedan,Qara,2.0,220000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8666241,8666241
+"Hyundai Maxcruz, 2.2 L, 2015 il, 150 000 km",38500.0,,Bakı,Hyundai,Maxcruz,2015,"Offroader / SUV, 5 qapı",Göy,2.2,150000.0,Avtomat,Diesel,Private,,https://turbo.az/autos/8786564,8786564
+"Mercedes E 350, 3.5 L, 2010 il, 243 000 km",25000.0,,Bakı,Mercedes,E 350,2010,Sedan,Qara,3.5,243000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8669875,8669875
+"Hyundai Elantra, 2.0 L, 2016 il, 107 000 km",23000.0,,Bakı,Hyundai,Elantra,2016,Sedan,Ağ,2.0,107000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8915614,8915614
+"Hyundai Santa Fe, 2.0 L, 2010 il, 159 000 km",26500.0,,Bakı,Hyundai,Santa Fe,2010,"Offroader / SUV, 5 qapı",Ağ,2.0,159000.0,Avtomat,Diesel,Private,,https://turbo.az/autos/8905201,8905201
+"Ford Bronco Sport, 1.5 L, 2022 il, 14 996 km",28500.0,,Bakı,Ford,Bronco Sport,2022,"Offroader / SUV, 5 qapı",Boz,1.5,14996.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8614962,8614962
+"LADA (VAZ) 2115, 1.5 L, 2004 il, 255 000 km",5500.0,,Xudat,LADA (VAZ),2115,2004,Sedan,Yaşıl,1.5,255000.0,Mexaniki,Gasoline,Private,,https://turbo.az/autos/8877607,8877607
+"Toyota Prius, 1.5 L, 2008 il, 282 000 km",10900.0,,Bakı,Toyota,Prius,2008,Liftbek,Yaş Asfalt,1.5,282000.0,Variator,Hybrid,Private,,https://turbo.az/autos/8933984,8933984
+"Hyundai Santa Fe, 2.0 L, 2015 il, 226 000 km",30800.0,,Bakı,Hyundai,Santa Fe,2015,"Offroader / SUV, 5 qapı",Yaş Asfalt,2.0,226000.0,Avtomat,Diesel,Private,,https://turbo.az/autos/8917848,8917848
+"Ford Transit, 2.2 L, 2010 il, 180 756 km",19200.0,,Bakı,Ford,Transit,2010,Furqon,Ağ,2.2,180756.0,Mexaniki,Diesel,Private,,https://turbo.az/autos/8959869,8959869
+"BMW 530, 2.0 L, 2017 il, 117 000 km",37300.0,,Bakı,BMW,530,2017,Sedan,Qara,2.0,117000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8938502,8938502
+"Haval H6, 1.5 L, 2022 il, 12 000 km",37600.0,,Bakı,Haval,H6,2022,"Offroader / SUV, 5 qapı",Ağ,1.5,12000.0,Robot,Gasoline,Private,,https://turbo.az/autos/8945114,8945114
+"Toyota Prius, 1.5 L, 2008 il, 282 000 km",12900.0,,Bakı,Toyota,Prius,2008,Liftbek,Göy,1.5,282000.0,Variator,Hybrid,Private,,https://turbo.az/autos/8949202,8949202
+"Kia K7, 2.2 L, 2016 il, 144 000 km",43500.0,,Bakı,Kia,K7,2016,Sedan,Ağ,2.2,144000.0,Avtomat,Diesel,Private,,https://turbo.az/autos/8959871,8959871
+"Mercedes 190, 2.0 L, 1991 il, 350 000 km",5800.0,,Şəki,Mercedes,190,1991,Sedan,Qəhvəyi,2.0,350000.0,Mexaniki,Diesel,Private,,https://turbo.az/autos/8959870,8959870
+"Ford Edge, 2.0 L, 2015 il, 129 000 km",29900.0,,Bakı,Ford,Edge,2015,"Offroader / SUV, 5 qapı",Qara,2.0,129000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8866049,8866049
+"Nissan Teana, 2.3 L, 2006 il, 198 000 km",10900.0,,Bakı,Nissan,Teana,2006,Sedan,Qara,2.3,198000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8887210,8887210
+"Mercedes 190, 2.0 L, 1990 il, 517 961 km",6000.0,,Dəliməmmədli,Mercedes,190,1990,Sedan,Göy,2.0,517961.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8959863,8959863
+"Toyota Aqua, 1.5 L, 2016 il, 170 000 km",19000.0,,Bakı,Toyota,Aqua,2016,"Hetçbek, 5 qapı",Ağ,1.5,170000.0,Variator,Hybrid,Private,,https://turbo.az/autos/8959862,8959862
+"BMW 328, 2.0 L, 2015 il, 117 000 km",21500.0,,Sumqayıt,BMW,328,2015,Sedan,Yaş Asfalt,2.0,117000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8959866,8959866
+"LADA (VAZ) 2107, 1.6 L, 2008 il, 80 000 km",6500.0,,Şirvan,LADA (VAZ),2107,2008,Sedan,Ağ,1.6,80000.0,Mexaniki,Gasoline,Private,,https://turbo.az/autos/8959861,8959861
+"Mitsubishi Pajero, 3.0 L, 2013 il, 143 000 km",27500.0,,Bakı,Mitsubishi,Pajero,2013,"Offroader / SUV, 5 qapı",Boz,3.0,143000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8865171,8865171
+"Kia Stinger, 2.0 L, 2018 il, 89 900 km",21200.0,,Bakı,Kia,Stinger,2018,Liftbek,Qara,2.0,89900.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8756456,8756456
+"Ford Fusion, 1.5 L, 2018 il, 271 979 km",21500.0,,Şirvan,Ford,Fusion,2018,Sedan,Qara,1.5,271979.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8959367,8959367
+"Jetour T2, 1.5 L, 2024 il, yeni",61500.0,,Bakı,Jetour,T2,2024,"Offroader / SUV, 5 qapı",Qara,1.5,0.0,Variator,Hybrid,Private,,https://turbo.az/autos/8951430,8951430
+"Opel Astra, 1.4 L, 2004 il, 237 000 km",9700.0,,Bakı,Opel,Astra,2004,"Hetçbek, 5 qapı",Gümüşü,1.4,237000.0,Mexaniki,Gasoline,Private,,https://turbo.az/autos/8948163,8948163
+"Mercedes C 180, 1.6 L, 2013 il, 163 000 km",23500.0,,Bakı,Mercedes,C 180,2013,Sedan,Qara,1.6,163000.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8883814,8883814
+"Hyundai Elantra, 1.8 L, 2013 il, 167 452 km",18300.0,,Bakı,Hyundai,Elantra,2013,Sedan,Gümüşü,1.8,167452.0,Avtomat,Gasoline,Private,,https://turbo.az/autos/8916689,8916689
+"Toyota Prius, 1.5 L, 2008 il, 225 000 km",12200.0,,Bakı,Toyota,Prius,2008,Liftbek,Yaş Asfalt,1.5,225000.0,Variator,Hybrid,Private,,https://turbo.az/autos/8951536,8951536
+"Isuzu FVR 34 Q, 7.5 L, 2024 il, yeni",115000.0,,Bakı,Isuzu,FVR 34 Q,2024,Yük maşını,Ağ,7.5,0.0,Mexaniki,Diesel,Private,,https://turbo.az/autos/6916629,6916629
