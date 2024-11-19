@@ -1,37 +1,37 @@
-title,price,description,city,brand,model,year,body_type,color,engine,mileage,Sürətlər qutusu,Ötürücü,Yeni,Yerlərin sayı,Sahiblər,Vəziyyəti,Hansı bazar üçün yığılıb,listing_id,page_number
-"ZEEKR 7X, 2024 il, yeni",35 900 USD,,Bakı,ZEEKR,7X,2024,"Offroader / SUV, 5 qapı",Ağ,422 a.g. / Elektro,0 km,Reduktor,Arxa,Bəli,5,1,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8832260,1
-"VGV U75 Plus, 2.0 L, 2024 il, yeni",38 000 AZN,,Bakı,VGV,U75 Plus,2024,"Offroader / SUV, 5 qapı",Göy,2.0 L / 224 a.g. / Benzin,0 km,Avtomat,Ön,Bəli,7,1,"Vuruğu yoxdur, rənglənməyib",Avropa,7583379,1
-"Leapmotor T03, 2024 il, yeni",25 900 AZN,,Bakı,Leapmotor,T03,2024,"Hetçbek, 5 qapı",Ağ,109 a.g. / Elektro,0 km,Reduktor,Ön,Bəli,4,,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8627866,1
-"Bentley Continental GT, 6.0 L, 2012 il, 96 490 km",45 500 USD,,Bakı,Bentley,Continental GT,2012,Kupe,Qara,6.0 L / 625 a.g. / Benzin,96 490 km,Avtomat,Tam,Xeyr,,0,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8110871,1
-"Kia Forte, 2.0 L, 2017 il, 59 000 km",23 400 AZN,,Bakı,Kia,Forte,2017,Sedan,Qəhvəyi,2.0 L / 149 a.g. / Benzin,59 000 km,Avtomat,Ön,Xeyr,,,"Vuruğu yoxdur, rənglənməyib",,8918426,1
-"Land Rover Range Rover, 3.0 L, 2016 il, 160 000 km",45 000 USD,,Xırdalan,Land Rover,Range Rover,2016,"Offroader / SUV, 5 qapı",Yaş Asfalt,3.0 L / 340 a.g. / Benzin,160 000 km,Avtomat,Tam,Xeyr,5,2,"Vuruğu yoxdur, rənglənməyib",Avropa,8947457,1
-"Kia Forte, 1.8 L, 2015 il, 201 168 km",27 100 AZN,,Bakı,Kia,Forte,2015,Sedan,Ağ,1.8 L / 145 a.g. / Benzin,201 168 km,Avtomat,Ön,Xeyr,4,1,"Vuruğu yoxdur, rənglənməyib",Amerika,8955704,1
-"Mercedes Sprinter 313, 2.2 L, 2008 il, 210 000 km",20 800 AZN,,Bakı,Mercedes,Sprinter 313,2008,Furqon,Tünd qırmızı,2.2 L / 129 a.g. / Dizel,210 000 km,Mexaniki,Arxa,Xeyr,3,2,"Vuruğu yoxdur, rənglənməyib",Avropa,8921585,1
-"Chevrolet Malibu, 1.5 L, 2016 il, 188 000 km",15 000 AZN,,Bakı,Chevrolet,Malibu,2016,Sedan,Qara,1.5 L / 160 a.g. / Benzin,188 000 km,Avtomat,Ön,Xeyr,,0,"Vuruğu yoxdur, rənglənməyib",,8941088,1
-"Hyundai Accent, 1.4 L, 2012 il, 208 000 km",18 000 AZN,,Bakı,Hyundai,Accent,2012,Sedan,Ağ,1.4 L / 97 a.g. / Benzin,208 000 km,Avtomat,Ön,Xeyr,5,,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8268311,1
-"Lexus ES 300h, 2.5 L, 2022 il, 64 000 km",42 900 USD,,Bakı,Lexus,ES 300h,2022,Sedan,Qara,2.5 L / 218 a.g. / Hibrid,64 000 km,Avtomat,Ön,Xeyr,5,1,"Vuruğu yoxdur, rənglənməyib",,7909337,1
-"Toyota Land Cruiser Prado, 2.7 L, 2010 il, 88 530 km",24 000 USD,,Bakı,Toyota,Land Cruiser Prado,2010,"Offroader / SUV, 5 qapı",Ağ,2.7 L / 163 a.g. / Benzin,88 530 km,Avtomat,Tam,Xeyr,7,1,"Vuruğu yoxdur, rənglənməyib",Dubay,8852472,1
-"Toyota Land Cruiser, 4.0 L, 2013 il, 122 000 km",33 400 USD,,Gəncə,Toyota,Land Cruiser,2013,"Offroader / SUV, 5 qapı",Qara,4.0 L / 275 a.g. / Benzin,122 000 km,Avtomat,Tam,Xeyr,7,1,"Vuruğu yoxdur, rənglənməyib",,8953563,1
-"Mercedes E 220 d, 2.2 L, 2007 il, 328 000 km",16 900 AZN,,Xırdalan,Mercedes,E 220 d,2007,Sedan,Qara,2.2 L / 170 a.g. / Dizel,328 000 km,Avtomat,Arxa,Xeyr,5,0,"Vuruğu yoxdur, rənglənməyib",Avropa,8939568,1
-"BMW 528, 3.0 L, 2012 il, 200 000 km",27 000 AZN,,Sumqayıt,BMW,528,2012,Sedan,Qara,3.0 L / 258 a.g. / Benzin,200 000 km,Avtomat,Arxa,Xeyr,4,4 və daha çox,"Vuruğu yoxdur, rənglənməyib",Avropa,8959191,1
-"Kia Optima, 2.4 L, 2012 il, 163 509 km",16 000 AZN,,Bakı,Kia,Optima,2012,Sedan,Boz,2.4 L / 180 a.g. / Benzin,163 509 km,Avtomat,Ön,Xeyr,4,2,"Vuruğu yoxdur, rənglənməyib",Amerika,8959194,1
-"Toyota Land Cruiser, 3.5 L, 2022 il, 23 000 km",171 000 AZN,,Bakı,Toyota,Land Cruiser,2022,"Offroader / SUV, 5 qapı",Qara,3.5 L / 415 a.g. / Benzin,23 000 km,Avtomat,Tam,Xeyr,7,1,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8721886,1
-"Ford Escape, 1.5 L, 2020 il, 144 519 km",27 000 AZN,,Bakı,Ford,Escape,2020,"Offroader / SUV, 5 qapı",Yaş Asfalt,1.5 L / 180 a.g. / Benzin,144 519 km,Avtomat,Ön,Xeyr,5,0,"Vuruğu yoxdur, rənglənməyib",Amerika,8911242,1
-"Toyota Land Cruiser, 4.7 L, 2011 il, 158 000 km",34 500 USD,,Gəncə,Toyota,Land Cruiser,2011,"Offroader / SUV, 5 qapı",Ağ,4.7 L / 288 a.g. / Benzin,158 000 km,Avtomat,Tam,Xeyr,,1,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8946407,1
-"Hyundai Elantra, 2.0 L, 2016 il, 167 470 km",23 500 AZN,,Bakı,Hyundai,Elantra,2016,Sedan,Göy,2.0 L / 150 a.g. / Benzin,167 470 km,Avtomat,Ön,Xeyr,,,"Vuruğu yoxdur, rənglənməyib",Avropa,8936487,1
-"Hyundai Elantra, 1.6 L, 2017 il, 140 657 km",26 000 AZN,,Bakı,Hyundai,Elantra,2017,Sedan,Gümüşü,1.6 L / 204 a.g. / Benzin,140 657 km,Robot,Ön,Xeyr,5,,"Vuruğu yoxdur, rənglənməyib",Amerika,8928558,1
-"BMW 328, 2.0 L, 2015 il, 78 000 km",17 800 USD,,Bakı,BMW,328,2015,Sedan,Yaş Asfalt,2.0 L / 245 a.g. / Benzin,78 000 km,Avtomat,Arxa,Xeyr,5,0,"Vuruğu yoxdur, rənglənməyib",Amerika,8915126,1
-"Kia Ceed, 1.6 L, 2016 il, 168 000 km",22 700 AZN,,Bakı,Kia,Ceed,2016,"Universal, 5 qapı",Ağ,1.6 L / 136 a.g. / Dizel,168 000 km,Mexaniki,Ön,Xeyr,5,0,"Vuruğu yoxdur, rənglənməyib",Avropa,8936441,1
-"Mercedes E 200, 2.0 L, 1996 il, 498 000 km",8 750 AZN,,Sumqayıt,Mercedes,E 200,1996,Sedan,Göy,2.0 L / 136 a.g. / Benzin,498 000 km,Avtomat,Arxa,Xeyr,5,3,"Vuruğu yoxdur, rənglənməyib",Avropa,8959190,1
-"Changan Deepal S7, 1.5 L, 2024 il, yeni",21 100 USD,,Bakı,Changan,Deepal S7,2024,"Offroader / SUV, 5 qapı",Açıq yaşıl,1.5 L / 258 a.g. / Plug-in Hibrid,0 km,Avtomat,Arxa,Bəli,5,,"Vuruğu yoxdur, rənglənməyib",,8701233,1
-"Land Rover Range Rover, 3.0 L, 2014 il, 170 000 km",42 800 USD,,Bakı,Land Rover,Range Rover,2014,"Offroader / SUV, 5 qapı",Yaş Asfalt,3.0 L / 248 a.g. / Dizel,170 000 km,Avtomat,Tam,Xeyr,5,1,"Vuruğu yoxdur, rənglənməyib",Avropa,8053633,1
-"Honda Insight, 1.3 L, 2009 il, 330 000 km",13 000 AZN,,Bakı,Honda,Insight,2009,Liftbek,Tünd qırmızı,1.3 L / 99 a.g. / Hibrid,330 000 km,Variator,Ön,Xeyr,,,"Vuruğu yoxdur, rənglənməyib",,8959189,1
-"Mercedes C 180, 1.8 L, 1995 il, 368 000 km",7 800 AZN,,Bakı,Mercedes,C 180,1995,Sedan,Göy,1.8 L / 122 a.g. / Benzin,368 000 km,Avtomat,Arxa,Xeyr,,,"Vuruğu yoxdur, rənglənməyib",,8904459,1
-"BMW 528, 2.0 L, 2016 il, 113 000 km",24 500 USD,,Bakı,BMW,528,2016,Sedan,Yaş Asfalt,2.0 L / 245 a.g. / Benzin,113 000 km,Avtomat,Tam,Xeyr,5,2,"Vuruğu yoxdur, rənglənib",Amerika,8870631,1
-"Jeep Grand Cherokee, 3.6 L, 2013 il, 121 000 km",35 800 AZN,,Bakı,Jeep,Grand Cherokee,2013,"Offroader / SUV, 5 qapı",Ağ,3.6 L / 290 a.g. / Benzin,121 000 km,Avtomat,Tam,Xeyr,5,1,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8639751,1
-"Audi Q7, 2.0 L, 2019 il, 87 000 km",38 800 USD,,Bakı,Audi,Q7,2019,"Offroader / SUV, 5 qapı",Ağ,2.0 L / 252 a.g. / Benzin,87 000 km,Avtomat,Tam,Xeyr,5,1,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8365402,1
-"Toyota Corolla, 1.6 L, 2022 il, 70 000 km",33 500 AZN,,Bakı,Toyota,Corolla,2022,Sedan,Qara,1.6 L / 124 a.g. / Benzin,70 000 km,Avtomat,Arxa,Xeyr,,1,"Vuruğu yoxdur, rənglənməyib",Rəsmi diler,8943326,1
-"BMW 530, 2.0 L, 2019 il, 30 000 km",33 500 USD,,Bakı,BMW,530,2019,Sedan,Qara,2.0 L / 249 a.g. / Benzin,30 000 km,Avtomat,Arxa,Xeyr,5,0,"Vuruğu yoxdur, rənglənməyib",Amerika,8759858,1
-"Land Rover RR Sport, 4.2 L, 2006 il, 224 000 km",25 500 AZN,,Bakı,Land Rover,RR Sport,2006,"Offroader / SUV, 5 qapı",Yaş Asfalt,4.2 L / 390 a.g. / Benzin,224 000 km,Avtomat,Tam,Xeyr,5,1,"Vuruğu yoxdur, rənglənməyib",Avropa,8875762,1
-"BMW 535, 3.0 L, 2012 il, 135 773 km",28 800 AZN,,Bakı,BMW,535,2012,Sedan,Ağ,3.0 L / 306 a.g. / Benzin,135 773 km,Avtomat,Arxa,Xeyr,5,2,"Vuruğu yoxdur, rənglənməyib",Avropa,8385311,1
-"Mercedes Vito 111, 2.2 L, 2008 il, 297 300 km",18 900 AZN,,Bakı,Mercedes,Vito 111,2008,Furqon,Ağ,2.2 L / 125 a.g. / Dizel,297 300 km,Mexaniki,Arxa,Xeyr,,,"Vuruğu yoxdur, rənglənməyib",Avropa,8800218,1
+title,price,description,city,brand,model,year,body_type,color,engine,mileage,Sürətlər qutusu,Ötürücü,Yeni,Vəziyyəti,Yerlərin sayı,Sahiblər,Hansı bazar üçün yığılıb
+"Land Rover Range Rover, 3.0 L, 2023 il, 12 500 km",194 000 USD,,Bakı,Land Rover,Range Rover,2023,"Offroader / SUV, 5 qapı",Qara,3.0 L / 400 a.g. / Benzin,12 500 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",,,
+"Toyota Camry, 2.0 L, 2024 il, yeni",38 400 USD,,Bakı,Toyota,Camry,2024,Sedan,Ağ,2.0 L / 200 a.g. / Hibrid,0 km,Variator,Ön,Bəli,"Vuruğu yoxdur, rənglənməyib",5,1,Avropa
+"Toyota Corolla, 1.6 L, 2020 il, 59 700 km",35 000 AZN,,Bakı,Toyota,Corolla,2020,Sedan,Qara,1.6 L / 124 a.g. / Benzin,59 700 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,0,Avropa
+"XPeng G6, 2024 il, yeni",39 900 USD,,Bakı,XPeng,G6,2024,"Offroader / SUV, 5 qapı",Qara,476 a.g. / Elektro,0 km,Reduktor,Tam,Bəli,"Vuruğu yoxdur, rənglənməyib",,1,Avropa
+"Chevrolet Equinox, 1.5 L, 2021 il, 205 000 km",22 500 AZN,,Gəncə,Chevrolet,Equinox,2021,"Offroader / SUV, 5 qapı",Gümüşü,1.5 L / 170 a.g. / Benzin,205 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Amerika
+"Jeep Wrangler, 2.0 L, 2021 il, 45 000 km",52 000 USD,,Bakı,Jeep,Wrangler,2021,"Offroader / SUV, 5 qapı",Yaş Asfalt,2.0 L / 272 a.g. / Plug-in Hibrid,45 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
+"Renault Tondar, 1.6 L, 2013 il, 323 000 km",6 300 AZN,,Neftçala,Renault,Tondar,2013,Sedan,Qara,1.6 L / 76 a.g. / Benzin,323 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənib",4,3,
+"Mercedes E 300 4MATIC, 2.0 L, 2017 il, 70 000 km",34 500 USD,,Bakı,Mercedes,E 300 4MATIC,2017,Sedan,Göy,2.0 L / 245 a.g. / Benzin,70 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",4,1,
+"Hyundai Sonata, 2.0 L, 2010 il, 270 000 km",18 500 AZN,,Bakı,Hyundai,Sonata,2010,Sedan,Boz,2.0 L / 165 a.g. / Benzin,270 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",4,2,Koreya
+"Jeep Grand Cherokee, 2.0 L, 2022 il, 7 041 km",57 500 USD,,Bakı,Jeep,Grand Cherokee,2022,"Offroader / SUV, 5 qapı",Boz,2.0 L / 375 a.g. / Plug-in Hibrid,7 041 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
+"Kia Stinger, 2.0 L, 2018 il, 72 420 km",21 300 USD,,Bakı,Kia,Stinger,2018,Liftbek,Ağ,2.0 L / 247 a.g. / Benzin,72 420 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
+"Kia Sorento, 2.0 L, 2019 il, 147 000 km",44 300 AZN,,Bakı,Kia,Sorento,2019,"Offroader / SUV, 5 qapı",Yaş Asfalt,2.0 L / 184 a.g. / Dizel,147 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Koreya
+"Mercedes E 220, 2.2 L, 1994 il, 514 000 km",8 900 AZN,,Bakı,Mercedes,E 220,1994,Sedan,Gümüşü,2.2 L / 150 a.g. / Benzin,514 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənib",5,0,Avropa
+"Land Rover Range Rover, 3.0 L, 2015 il, 166 700 km",37 900 USD,,Bakı,Land Rover,Range Rover,2015,"Offroader / SUV, 5 qapı",Ağ,3.0 L / 340 a.g. / Benzin,166 700 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Amerika
+"Mercedes C 300, 2.0 L, 2015 il, 125 000 km",24 500 USD,,Bakı,Mercedes,C 300,2015,Sedan,Boz,2.0 L / 245 a.g. / Benzin,125 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Amerika
+"Ford Fusion (North America), 1.5 L, 2014 il, 120 000 km",18 000 AZN,,Bakı,Ford,Fusion (North America),2014,Sedan,Ağ,1.5 L / 181 a.g. / Benzin,120 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Amerika
+"Jeep Grand Cherokee, 3.6 L, 2014 il, 179 555 km",46 900 AZN,,Bakı,Jeep,Grand Cherokee,2014,"Offroader / SUV, 5 qapı",Qara,3.6 L / 286 a.g. / Benzin,179 555 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Avropa
+"Kia Ceed, 1.6 L, 2008 il, 383 000 km",13 000 AZN,,Bakı,Kia,Ceed,2008,"Universal, 5 qapı",Boz,1.6 L / 115 a.g. / Dizel,383 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Koreya
+"Audi A4, 1.8 L, 2008 il, 316 000 km",13 000 AZN,,Bakı,Audi,A4,2008,Sedan,Ağ,1.8 L / 160 a.g. / Benzin,316 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Avropa
+"Subaru Impreza, 2.0 L, 2008 il, 365 400 km",9 000 AZN,,Xaçmaz,Subaru,Impreza,2008,"Hetçbek, 5 qapı",Boz,2.0 L / 150 a.g. / Benzin,365 400 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənib",4,2,Yaponiya
+"Mercedes E 320, 3.0 L, 2007 il, 299 123 km",19 850 AZN,,Bakı,Mercedes,E 320,2007,Sedan,Qara,3.0 L / 224 a.g. / Dizel,299 123 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",,0,
+"Ford Transit, 2.5 L, 1997 il, 570 000 km",24 000 AZN,,Bakı,Ford,Transit,1997,Yük maşını,Ağ,2.5 L / 76 a.g. / Dizel,570 000 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",3,1,Avropa
+"Mercedes Vito 111, 2.2 L, 2009 il, 352 420 km",30 500 AZN,,Bakı,Mercedes,Vito 111,2009,Minivan,Ağ,2.2 L / 150 a.g. / Dizel,352 420 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",8+,1,
+"GAZ 330202-740, 2.7 L, 2023 il, yeni",28 500 AZN,,Bakı,GAZ,330202-740,2023,Yük maşını,Ağ,2.7 L / 106 a.g. / Benzin,0 km,Mexaniki,Arxa,Bəli,"Vuruğu yoxdur, rənglənməyib",,,Rusiya
+"Mercedes C 240, 2.4 L, 1997 il, 323 000 km",12 500 AZN,,Bakı,Mercedes,C 240,1997,Sedan,Boz,2.4 L / 170 a.g. / Benzin,323 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,3,Avropa
+"LADA (VAZ) 2106, 1.5 L, 1987 il, 21 837 km",2 500 AZN,,Bakı,LADA (VAZ),2106,1987,Sedan,Bənövşəyi,1.5 L / 65 a.g. / Benzin,21 837 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",,,
+"Hyundai Elantra, 1.8 L, 2013 il, 179 000 km",18 900 AZN,,Bakı,Hyundai,Elantra,2013,Sedan,Gümüşü,1.8 L / 150 a.g. / Benzin,179 000 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",,2,
+"Mercedes Vito 111, 2.2 L, 2009 il, 309 000 km",19 300 AZN,,Bakı,Mercedes,Vito 111,2009,Furqon,Ağ,2.2 L / 140 a.g. / Dizel,309 000 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",,0,
+"Kia Rio, 1.5 L, 2008 il, 298 000 km",9 700 AZN,,Bakı,Kia,Rio,2008,"Hetçbek, 5 qapı",Qırmızı,1.5 L / 110 a.g. / Dizel,298 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",,0,
+"GAZ Next A31R22, 2.8 L, 2023 il, yeni",45 500 AZN,,Bakı,GAZ,Next A31R22,2023,Furqon,Ağ,2.8 L / 149 a.g. / Dizel,0 km,Mexaniki,Arxa,Bəli,"Vuruğu yoxdur, rənglənməyib",,,
+"Chevrolet Captiva, 2.2 L, 2011 il, 167 914 km",23 500 AZN,,Şəki,Chevrolet,Captiva,2011,"Offroader / SUV, 5 qapı",Ağ,2.2 L / 184 a.g. / Dizel,167 914 km,Avtomat,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",7,2,Koreya
+"Lexus RX 350, 3.5 L, 2006 il, 340 000 km",17 900 AZN,,Bakı,Lexus,RX 350,2006,"Offroader / SUV, 5 qapı",Ağ,3.5 L / 270 a.g. / Benzin,340 000 km,Avtomat,Tam,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,1,Rəsmi diler
+"Kia Rio, 1.5 L, 2005 il, 257 000 km",12 300 AZN,,Xırdalan,Kia,Rio,2005,"Hetçbek, 5 qapı",Qırmızı,1.5 L / 110 a.g. / Dizel,257 000 km,Mexaniki,Ön,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,,Digər
+"Kia K7, 2.5 L, 2019 il, 45 000 km",25 000 USD,,Bakı,Kia,K7,2019,Sedan,Yaş Asfalt,2.5 L / 198 a.g. / Benzin,45 000 km,Avtomat,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",5,2,Avropa
+"GAZ Next A21R22-30, 2.8 L, 2023 il, yeni",38 000 AZN,,Bakı,GAZ,Next A21R22-30,2023,Yük maşını,Ağ,2.8 L / 150 a.g. / Dizel,0 km,Mexaniki,Arxa,Bəli,"Vuruğu yoxdur, rənglənməyib",,,
+"LADA (VAZ) 21011, 1.3 L, 1981 il, 25 555 km",3 000 AZN,,Zaqatala,LADA (VAZ),21011,1981,Sedan,Qırmızı,1.3 L / 65 a.g. / Benzin,25 555 km,Mexaniki,Arxa,Xeyr,"Vuruğu yoxdur, rənglənməyib",4,,Rusiya
