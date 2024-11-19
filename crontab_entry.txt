@@ -1,0 +1,2 @@
+# Run turbo.az scraper every minute (for testing)
+* * * * * /Users/farizrzayev/Desktop/projects/turbo_az_carwebsite/run_scraper.sh
